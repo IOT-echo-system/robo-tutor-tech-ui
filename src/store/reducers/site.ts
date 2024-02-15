@@ -13,6 +13,11 @@ export type SiteStateType = {
   header: {
     menus: Array<{link: string; label: string}>
   }
+  footer: {
+    sections: Array<{label: string; menus: Array<{link: string; label: string}>}>
+    social: {title: string; socials: Array<{icon: string; link: string}>}
+    copyrights: string
+  }
 }
 export const initSiteState: SiteStateType = siteDetails
 
