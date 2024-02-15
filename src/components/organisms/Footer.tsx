@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
                 return <></>
               }
               return (
-                <Link href={link}>
+                <Link href={link} key={link}>
                   <Icon fontSize={'medium'} />
                 </Link>
               )
