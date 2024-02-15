@@ -23,7 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Npm install
-      run: npm install -f
+      run: npm install
     - name: Running lint Checker
       run: npm run lint:check
     # - name: Running unit tests
