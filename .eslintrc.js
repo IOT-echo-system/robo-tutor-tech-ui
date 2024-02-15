@@ -149,6 +149,13 @@ module.exports = {
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-unsafe-return': 'off'
       }
+    },
+    {
+      files: ['**/*page*.tsx'],
+      rules: {
+        '@typescript-eslint/restrict-template-expressions': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off'
+      }
     }
   ]
 }
