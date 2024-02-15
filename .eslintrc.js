@@ -125,7 +125,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.spec.{ts,tsx}'],
+      files: ['*.spec.{ts,tsx}', './data/pages.ts'],
       rules: {
         'max-len': 'warn',
         '@typescript-eslint/no-magic-numbers': 'off',

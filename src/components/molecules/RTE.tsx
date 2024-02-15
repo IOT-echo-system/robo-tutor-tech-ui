@@ -7,6 +7,9 @@ const TextContainer = styled(Typography)(({theme}) => ({
   '&.MuiTypography-h2': {
     fontSize: theme.spacing(4),
     fontWeight: 500
+  },
+  '&.MuiTypography-body1': {
+    fontSize: theme.spacing(2.25)
   }
 }))
 
