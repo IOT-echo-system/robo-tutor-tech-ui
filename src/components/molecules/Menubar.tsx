@@ -1,33 +1,26 @@
 import React, {useState} from 'react'
 import {useMedia, useSelector} from '../../hooks'
-import {IconButton, Stack, styled} from '@mui/material'
+import {Drawer, IconButton, Stack, styled} from '@mui/material'
 import {MenuItem} from '../atoms'
 import {Close, Menu} from '@mui/icons-material'
 
-const Container = styled(Stack)<{open: boolean}>(({theme, open}) => ({
+const Container = styled(Stack)(({theme}) => ({
+  background: theme.palette.common.white,
+  flexDirection: 'row',
+  '&>*': {
+    padding: theme.spacing(2)
+  }
+}))
+
+const MobileMenuContainer = styled(Stack)(({theme}) => ({
   borderTop: `1px solid ${theme.palette.background.default}`,
   minHeight: `calc(100vh - ${theme.spacing(6)})`,
   background: theme.palette.common.white,
-  position: 'absolute',
   top: theme.spacing(6),
-  right: 0,
-  overflow: 'hidden',
-  transition: 'width 0.2s ease-in-out',
-  width: theme.spacing(open ? 32 : 0),
+  width: theme.spacing(32),
   '&>*': {
     borderBottom: `1px solid ${theme.palette.background.default}`,
     padding: theme.spacing(2)
-  },
-  [theme.breakpoints.up('md')]: {
-    position: 'unset',
-    width: 'unset',
-    border: 'unset',
-    minHeight: 'unset',
-    flexDirection: 'row',
-    '&>*': {
-      borderBottom: 'unset',
-      padding: theme.spacing(2)
-    }
   }
 }))
 
@@ -36,22 +29,37 @@ export const Menubar: React.FC = () => {
   const media = useMedia()
   const [open, setOpen] = useState(false)
 
+  const handleMobileMenu = (open: boolean) => () => {
+    setOpen(open)
+  }
+
   return (
     <>
       {!media.md && (
-        <IconButton
-          onClick={() => {
-            setOpen(!open)
-          }}
-        >
-          {open ? <Close /> : <Menu />}
+        <IconButton onClick={handleMobileMenu(true)}>
+          <Menu />
         </IconButton>
       )}
-      <Container open={open}>
-        {menus.map(({label, link}) => (
-          <MenuItem key={link} link={link} label={label} />
-        ))}
-      </Container>
+      {media.md ? (
+        <Container>
+          {menus.map(({label, link}) => (
+            <MenuItem key={link} link={link} label={label} />
+          ))}
+        </Container>
+      ) : (
+        <Drawer open={open} onClose={handleMobileMenu(false)} anchor={'right'}>
+          <MobileMenuContainer>
+            <Stack justifyContent={'right'} direction={'row'} alignItems={'center'} p={0.3} pr={2}>
+              <IconButton onClick={handleMobileMenu(false)}>
+                <Close />
+              </IconButton>
+            </Stack>
+            {menus.map(({label, link}) => (
+              <MenuItem key={link} link={link} label={label} />
+            ))}
+          </MobileMenuContainer>
+        </Drawer>
+      )}
     </>
   )
 }
