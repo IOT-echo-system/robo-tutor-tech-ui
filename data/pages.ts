@@ -11,7 +11,7 @@ export const pages: Record<string, PageContent> = {
           bg: 'color',
           color: 'skyblue',
           image: {
-            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.jpg',
+            src: '/img/banner.jpg',
             alt: 'what-we-do'
           },
         }
@@ -202,7 +202,92 @@ export const pages: Record<string, PageContent> = {
             alt: 'what-we-do'
           },
         }
-      }
+      },
+      {
+        widget: 'TextContent',
+        styles: {width: 'Center'},
+        data: [
+          {type: 'body1', text: ''},
+          {
+            type: 'body1',
+            text: 'This Privacy Policy explains how Robotutor Tech ("we", "us", or "our") collects, uses, and discloses information about you when you access or use our website or services.'
+          },
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'Information We Collect'},
+          {
+            type: 'body1',
+            text: 'We may collect certain personal information about you when you use our website or services. This information may include:'
+          },
+          {
+            type: 'body1',
+            text: '  ●  Contact Information: such as your name, email address, phone number, and mailing address.'
+          },
+          {type: 'body1', text: '  ●  Demographic Information: such as your age, gender, and location.'},
+          {
+            type: 'body1',
+            text: '  ●  Payment Information: such as your credit card details or other payment information.'
+          },
+          {
+            type: 'body1',
+            text: '  ●  Usage Information: such as your IP address, browser type, operating system, and device information.'
+          },
+          {type: 'body1', text: '  ●  Other Information: any other information you choose to provide to us.'},
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'How We Use Your Information'},
+          {type: 'body1', text: 'We may use the information we collect for various purposes, including:'},
+          {type: 'body1', text: '  ●  Providing and managing our services to you.'},
+          {type: 'body1', text: '  ●  Communicating with you about our services and promotions.'},
+          {type: 'body1', text: '  ●  Improving our website and services.'},
+          {type: 'body1', text: '  ●  Personalizing your experience on our website.'},
+          {type: 'body1', text: '  ●  Analyzing trends and statistics.'},
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'Information Sharing'},
+          {
+            type: 'body1',
+            text: 'We may share your information with third parties for the following purposes:'
+          },
+          {
+            type: 'body1',
+            text: '  ●  Service Providers: we may share your information with third-party service providers who help us provide our services to you.'
+          },
+          {
+            type: 'body1',
+            text: '  ●  Legal Requirements: we may disclose your information in response to a subpoena, court order, or other legal process.'
+          },
+          {
+            type: 'body1',
+            text: '  ●  Protection of Rights: we may disclose your information to protect and defend our rights or property.'
+          },
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'Data Retention'},
+          {
+            type: 'body1',
+            text: 'We will retain your information for as long as necessary to fulfill the purposes outlined in this Privacy Policy unless a longer retention period is required or permitted by law.'
+          },
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'Your Choices'},
+          {
+            type: 'body1',
+            text: 'You may choose not to provide certain personal information, but this may limit your ability to use our services or access certain features of our website.'
+          },
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'Changes to This Privacy Policy'},
+          {
+            type: 'body1',
+            text: 'We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.'
+          },
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'Contact Us'},
+          {
+            type: 'body1',
+            text: 'If you have any questions about this Privacy Policy, please contact us at contact@robotutortech.com.'
+          },
+          {
+            type: 'body1',
+            text: ''
+          },
+        ]
+      },
     ]
   },
   'code-of-conduct': {
@@ -227,6 +312,7 @@ export const pages: Record<string, PageContent> = {
       widget: 'TextContent',
       styles: {width: 'Center'},
       data: [
+        {type: 'body1', text: ''},
         {type: 'h2', text: 'Page not found'},
         {
           type: 'body1',

@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
         </Stack>
       )}
       <Stack direction={'row'} justifyContent={'center'} alignItems={'center'} m={1}>
-        <Typography variant={'body1'}>{copyrights}</Typography>
+        <Typography variant={'body2'}>{copyrights}</Typography>
       </Stack>
     </Container>
   )
