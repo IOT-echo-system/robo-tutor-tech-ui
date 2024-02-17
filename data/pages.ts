@@ -154,6 +154,55 @@ export const pages: Record<string, PageContent> = {
             alt: 'what-we-do'
           },
         }
+      },
+      {
+        widget: 'TextContent',
+        styles: {width: 'Center'},
+        data: [
+          {type: 'body1', text: ''},
+          {
+            type: 'body1',
+            text: 'At Robotutor Tech, we are passionate about robotics and education. Founded with the vision of making robotics accessible to all, we offer personalized tutoring sessions and consultancy services in the fields of robotics and industrial automation.'
+          },
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'Our Mission'},
+          {
+            type: 'body1',
+            text: 'Our mission is to foster innovation and problem-solving skills by bringing robotics education to students\' homes. We believe that hands-on learning is the key to unlocking creativity and preparing the next generation for the challenges of tomorrow.'
+          },
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'Why Choose Us?'},
+          {
+            type: 'body1',
+            text: '  ●  Experienced Tutors: Our tutors are experts in their field, with years of experience in robotics and industrial automation.'
+          },
+          {
+            type: 'body1',
+            text: '  ●  Personalized Learning: We tailor our tutoring sessions to meet the unique needs of each student, ensuring that they get the most out of their experience.'
+          },
+          {
+            type: 'body1',
+            text: '  ●  Comprehensive Curriculum: Our curriculum covers a wide range of topics, from basic robotics principles to advanced industrial automation techniques.'
+          },
+          {
+            type: 'body1',
+            text: '  ●  Flexible Scheduling: We understand that every student has different scheduling needs, which is why we offer flexible tutoring sessions to fit your schedule.'
+          },
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'Get in Touch'},
+          {type: 'body1', text: 'Whether you\'re a student looking to explore the world of robotics or a business seeking to implement automation solutions, Robotutor Tech is here to help. Contact us today to learn more about our services and how we can help you achieve your goals.'},
+          {type: 'body1', text: ''},
+
+        ]
+      },
+            
+      {
+        widget: 'TextWithCTA',
+        data: {
+          text: 'Want to talk to us about your robotics journey?',
+          link: '/contact-us',
+          ctaText: 'Contact us'
+        }
       }
     ]
   },
