@@ -213,23 +213,40 @@ export const pages: Record<string, PageContent> = {
             text: 'Our mission is to foster innovation and problem-solving skills by bringing robotics education to students\' homes. We believe that hands-on learning is the key to unlocking creativity and preparing the next generation for the challenges of tomorrow.'
           },
           {type: 'body1', text: ''},
-          {type: 'h2', text: 'Why Choose Us?'},
-          {
-            type: 'body1',
-            text: '  ●  Experienced Tutors: Our tutors are experts in their field, with years of experience in robotics and industrial automation.'
-          },
-          {
-            type: 'body1',
-            text: '  ●  Personalized Learning: We tailor our tutoring sessions to meet the unique needs of each student, ensuring that they get the most out of their experience.'
-          },
-          {
-            type: 'body1',
-            text: '  ●  Comprehensive Curriculum: Our curriculum covers a wide range of topics, from basic robotics principles to advanced industrial automation techniques.'
-          },
-          {
-            type: 'body1',
-            text: '  ●  Flexible Scheduling: We understand that every student has different scheduling needs, which is why we offer flexible tutoring sessions to fit your schedule.'
-          },
+        ]
+      },
+      {
+        widget: 'ContentCards',
+        data: {
+          title: 'Why Choose Us?',
+          cards: [
+            {
+              title: 'Experienced Tutors',
+              image: {src: '/img/banner.jpg', alt: 'Experienced Tutors'},
+              content: 'Our tutors are experts in their field, with years of experience in robotics and industrial automation.'
+            },
+            {
+              title: 'Personalized Learning',
+              image: {src: '/img/banner.jpg', alt: 'Personalized Learning'},
+              content: 'We tailor our tutoring sessions to meet the unique needs of each student, ensuring that they get the most out of their experience.'
+            },
+            {
+              title: 'Comprehensive Curriculum',
+              image: {src: '/img/banner.jpg', alt: 'Comprehensive Curriculum'},
+              content: 'Our curriculum covers a wide range of topics, from basic robotics principles to advanced industrial automation techniques.'
+            },
+            {
+              title: 'Flexible Scheduling',
+              image: {src: '/img/banner.jpg', alt: 'Flexible Scheduling'},
+              content: 'We understand that every student has different scheduling needs, which is why we offer flexible tutoring sessions to fit your schedule.'
+            },
+          ]
+        }
+      },
+      {
+        widget: 'TextContent',
+        styles: {width: 'Center'},
+        data: [
           {type: 'body1', text: ''},
           {type: 'h2', text: 'Get in Touch'},
           {
@@ -240,7 +257,6 @@ export const pages: Record<string, PageContent> = {
 
         ]
       },
-
       {
         widget: 'TextWithCTA',
         data: {
