@@ -6,6 +6,8 @@ import {useMedia} from '../../hooks'
 
 const Container = styled(Stack)(({theme}) => ({
   justifyContent: 'center',
+  background: theme.palette.background.default,
+  padding: theme.spacing(4, 0),
   alignItems: 'center',
   '& h2': {
     fontSize: theme.spacing(4),
@@ -35,7 +37,7 @@ export const ContentCards: React.FC<WidgetPropType<ContentCardsPropsType>> = ({d
   const media = useMedia()
   const cardWidth = getCardWidth(Math.min(data.cards.length, 4))
   return (
-    <Container mt={4}>
+    <Container>
       <BoxedContainer justifyContent={'center'} alignItems={'center'}>
         <Typography variant={'h2'} textAlign={'center'}>
           {data.title}

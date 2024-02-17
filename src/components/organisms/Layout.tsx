@@ -5,8 +5,7 @@ import {Header} from './Header'
 import {Footer} from './Footer'
 import {useMedia} from '../../hooks'
 
-const Container = styled(Stack)(({theme}) => ({
-  background: theme.palette.background.default,
+const Container = styled(Stack)(() => ({
   minHeight: '100vh'
 }))
 

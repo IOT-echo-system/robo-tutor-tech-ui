@@ -52,6 +52,15 @@ export const pages: Record<string, PageContent> = {
         }
       },
       {
+        widget: 'TextContent',
+        styles: {width: 'Center'},
+        data: [
+          {type: 'body1', text: ''},
+          {type: 'body1', text: ''},
+          {type: 'body1', text: ''},
+        ]
+      },
+      {
         widget: 'ContentCards',
         data: {
           title: 'Why Choose Robotutor Tech?',
