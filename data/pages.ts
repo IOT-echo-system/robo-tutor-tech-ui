@@ -21,29 +21,71 @@ export const pages: Record<string, PageContent> = {
         styles: {width: 'Center'},
         data: [
           {type: 'body1', text: ''},
-          {type: 'h2', text: 'For education'},
           {
-            type: 'body1',
-            text: 'At Robotutor Tech, we are dedicated to bringing the world of robotics education to your doorstep. Our mission is to inspire and empower students of all ages to explore the fascinating realm of robotics in the comfort of their homes. Whether you’re a beginner eager to grasp the basics or an enthusiast aiming to master advanced concepts, our dedicated team of tutors is here to guide you on your robotics journey.'
-          },
-          {
-            type: 'body1',
-            text: 'We envision a future where every individual has the opportunity to unlock their potential in robotics. We believe in making this cutting-edge field accessible to all, fostering a passion for innovation and problem-solving from the comfort of one’s own home.'
+            type: 'h2',
+            text: 'Welcome to Robotutor Tech - Your Partner in Robotics and Industrial Automation'
           },
           {type: 'body1', text: ''},
-          {type: 'h2', text: 'For industry'},
           {
             type: 'body1',
-            text: 'At Robotutor Tech, we are a premier robotics and IoT consultancy company dedicated to helping businesses harness the power of cutting-edge technology. With a focus on strategy, design, and software engineering, we enable enterprises and technology disruptor\'s worldwide to thrive in the digital age.'
+            text: 'At Robotutor Tech, we are dedicated to bringing the world of robotics and industrial automation to your fingertips. Whether you\'re a student eager to learn or a business looking to innovate, we have the tools, expertise, and passion to help you succeed.'
           },
+          {type: 'body1', text: ''},
+        ]
+      },
+      {
+        widget: 'ContentCards',
+        data: {
+          title: 'Our Services',
+          cards: [
+            {
+              title: 'Robotics Tutoring',
+              image: {src: '/img/banner.jpg', alt: 'Tutoring'},
+              content: 'Our personalized tutoring sessions bring robotics education right to your doorstep. Our experienced tutors will guide you through hands-on learning experiences, making robotics fun and accessible for all ages.'
+            },
+            {
+              title: 'Industrial Automation Consultancy',
+              image: {src: '/img/banner.jpg', alt: ''},
+              content: 'For businesses seeking to streamline their operations and increase efficiency, our consultancy services offer tailor-made solutions using the latest automation technologieConsultancys.'
+            },
+          ]
+        }
+      },
+      {
+        widget: 'ContentCards',
+        data: {
+          title: 'Why Choose Robotutor Tech?',
+          cards: [
+            {
+              title: 'Experience',
+              image: {src: '/img/banner.jpg', alt: 'Experience'},
+              content: 'With years of experience in robotics and industrial automation, we have the knowledge and expertise to help you achieve your goals.'
+            },
+            {
+              title: 'Innovation',
+              image: {src: '/img/banner.jpg', alt: 'Innovation'},
+              content: 'We are constantly exploring new technologies and techniques to ensure that our services are at the forefront of innovation.'
+            },
+            {
+              title: 'Passion',
+              image: {src: '/img/banner.jpg', alt: 'Passion'},
+              content: 'Robotics is more than just a job for us - it\'s our passion. We are dedicated to inspiring the next generation of innovators and problem-solvers.'
+            },
+          ]
+        }
+      },
+      {
+        widget: 'TextContent',
+        styles: {width: 'Center'},
+        data: [
+          {type: 'body1', text: ''},
+          {type: 'h2', text: 'Get Started Today'},
           {
             type: 'body1',
-            text: 'In a world where digital disruption is constant, our team at Robotutor Tech stands ready to assist. As a startup diving into the exciting world of robotics and IoT consultancy with a fresh perspective, we are fueled by passion, innovation, and a drive to make a difference. While we may be new to the scene, we offer expertise in improving our clients’ responsiveness to change, unlocking new value through data and AI, building adaptable technology platforms aligned with business strategies, and delivering exceptional digital products and experiences at scale.'
+            text: 'Whether you\'re a student looking to explore the exciting world of robotics or a business seeking to automate your processes, Robotutor Tech is here to help. Contact us today to learn more about our services and how we can help you succeed.'
           },
-          {
-            type: 'body1',
-            text: 'Partner with us at Robotutor Tech to navigate the complexities of the modern technological landscape and achieve success in the digital era.'
-          }
+          {type: 'body1', text: ''},
+          {type: 'body1', text: ''},
         ]
       },
       {
@@ -190,12 +232,15 @@ export const pages: Record<string, PageContent> = {
           },
           {type: 'body1', text: ''},
           {type: 'h2', text: 'Get in Touch'},
-          {type: 'body1', text: 'Whether you\'re a student looking to explore the world of robotics or a business seeking to implement automation solutions, Robotutor Tech is here to help. Contact us today to learn more about our services and how we can help you achieve your goals.'},
+          {
+            type: 'body1',
+            text: 'Whether you\'re a student looking to explore the world of robotics or a business seeking to implement automation solutions, Robotutor Tech is here to help. Contact us today to learn more about our services and how we can help you achieve your goals.'
+          },
           {type: 'body1', text: ''},
 
         ]
       },
-            
+
       {
         widget: 'TextWithCTA',
         data: {
