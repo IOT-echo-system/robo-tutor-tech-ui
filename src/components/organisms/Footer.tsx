@@ -7,6 +7,7 @@ import type {SvgIconComponent} from '@mui/icons-material'
 import Link from 'next/link'
 
 const Container = styled(Stack)(({theme}) => ({
+  borderTop: `1px solid ${theme.palette.background.default}`,
   background: theme.palette.common.white
 }))
 

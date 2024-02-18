@@ -1,30 +1,34 @@
 import React from 'react'
-import {Stack, styled, Typography} from '@mui/material'
-import type {Variant} from '@mui/material/styles/createTypography'
+import {styled} from '@mui/material'
 
-const TextContainer = styled(Typography)(({theme}) => ({
-  fontSize: theme.spacing(2),
-  '&.MuiTypography-h2': {
-    fontSize: theme.spacing(4),
+const TextContainer = styled('div')(({theme}) => ({
+  fontSize: theme.spacing(2.5),
+  lineHeight: theme.spacing(4),
+  textAlign: 'justify',
+  margin: theme.spacing(2),
+  '& > *': {
+    margin: theme.spacing(2, 0)
+  },
+  '& h1, & h2': {
+    margin: theme.spacing(4, 0, 2, 0),
     fontWeight: 500
   },
-  '&.MuiTypography-body1': {
-    fontSize: theme.spacing(2.25)
+  '& h1': {
+    fontSize: theme.spacing(5)
+  },
+  '& h2': {
+    fontSize: theme.spacing(4)
+  },
+  '& a': {
+    color: theme.palette.primary.main
+  },
+  [theme.breakpoints.up('md')]: {
+    margin: theme.spacing(4)
   }
 }))
 
-export type RTEPropsType = {type: Variant; text: string}
+export type RTEPropsType = {content: string}
 
-export const RTE: React.FC<{data: RTEPropsType[]}> = ({data}) => {
-  return (
-    <Stack p={2} spacing={2}>
-      {data.map((content, index) => {
-        return (
-          <TextContainer key={`RTE_${index}`} variant={content.type}>
-            {content.text}
-          </TextContainer>
-        )
-      })}
-    </Stack>
-  )
+export const RTE: React.FC<RTEPropsType> = ({content}) => {
+  return <TextContainer dangerouslySetInnerHTML={{__html: content}} />
 }

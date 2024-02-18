@@ -49,7 +49,12 @@ export const ContentCards: React.FC<WidgetPropType<ContentCardsPropsType>> = ({d
                 key={`card_${index}`}
                 sx={{margin: 2, minWidth: 320, width: media.md ? cardWidth : 'calc(100% - 32px)'}}
               >
-                <CardMedia component="img" alt={card.image.alt} height="180" image={card.image.src} />
+                <CardMedia
+                  component="img"
+                  alt={card.image.alt}
+                  height={media.md ? '220' : '180'}
+                  image={card.image.src}
+                />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
                     {card.title}

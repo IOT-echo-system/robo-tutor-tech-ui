@@ -4,10 +4,10 @@ import {WidgetContainer} from '../atoms'
 import type {RTEPropsType} from '../molecules'
 import {RTE} from '../molecules'
 
-export const TextContent: React.FC<WidgetPropType<RTEPropsType[]>> = ({styles, data}) => {
+export const TextContent: React.FC<WidgetPropType<RTEPropsType>> = ({styles, data}) => {
   return (
     <WidgetContainer styles={styles}>
-      <RTE data={data} />
+      <RTE content={data.content} />
     </WidgetContainer>
   )
 }
