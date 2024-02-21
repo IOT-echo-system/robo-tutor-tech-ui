@@ -125,7 +125,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.spec.{ts,tsx}', './data/pages.ts'],
+      files: ['*.spec.{ts,tsx}'],
       rules: {
         'max-len': 'warn',
         '@typescript-eslint/no-magic-numbers': 'off',
@@ -135,6 +135,12 @@ module.exports = {
         '@typescript-eslint/no-confusing-void-expression': 'off',
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/unbound-method':'off'
+      }
+    },
+    {
+      files: ['./data/pages.ts'],
+      rules: {
+        'max-len': 'off',
       }
     },
     {

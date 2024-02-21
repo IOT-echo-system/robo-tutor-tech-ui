@@ -2,7 +2,13 @@ import type {PageContent} from '../src/components/templates'
 
 export const pages: Record<string, PageContent> = {
   home: {
-    title: '',
+    seoDetails: {
+      keywords: [],
+      description: '',
+      title: '',
+      metaImage: '',
+      hostname: ''
+    },
     contents: [
       {
         widget: 'HeroBanner',
@@ -80,7 +86,13 @@ export const pages: Record<string, PageContent> = {
     ]
   },
   'what-we-do': {
-    title: 'What we do',
+    seoDetails: {
+      keywords: [],
+      title: 'What we do',
+      description: '',
+      metaImage: '',
+      hostname: ''
+    },
     contents: [
       {
         widget: 'HeroBanner',
@@ -118,7 +130,14 @@ export const pages: Record<string, PageContent> = {
     ]
   },
   articles: {
-    title: 'Articles',
+
+    seoDetails: {
+      keywords: [],
+      title: 'Articles',
+      description: '',
+      metaImage: '',
+      hostname: ''
+    },
     contents: [
       {
         widget: 'HeroBanner',
@@ -135,7 +154,15 @@ export const pages: Record<string, PageContent> = {
     ]
   },
   blogs: {
-    title: 'Blogs', contents: [
+
+    seoDetails: {
+      keywords: [],
+      title: 'Blogs',
+      description: '',
+      metaImage: '',
+      hostname: ''
+    },
+    contents: [
       {
         widget: 'HeroBanner',
         data: {
@@ -151,7 +178,15 @@ export const pages: Record<string, PageContent> = {
     ]
   },
   'about-us': {
-    title: 'About us', contents: [
+
+    seoDetails: {
+      title: 'About us',
+      keywords: [],
+      description: '',
+      metaImage: '',
+      hostname: ''
+    },
+    contents: [
       {
         widget: 'HeroBanner',
         data: {
@@ -220,7 +255,14 @@ export const pages: Record<string, PageContent> = {
     ]
   },
   'contact-us': {
-    title: 'Contact us', contents: [
+    seoDetails: {
+      keywords: [],
+      title: 'Contact us',
+      description: '',
+      metaImage: '',
+      hostname: ''
+    },
+    contents: [
       {
         widget: 'HeroBanner',
         data: {
@@ -236,7 +278,14 @@ export const pages: Record<string, PageContent> = {
     ]
   },
   partnerships: {
-    title: 'Partnerships', contents: [
+    seoDetails: {
+      keywords: [],
+      title: 'Partnerships',
+      description: '',
+      metaImage: '',
+      hostname: ''
+    },
+    contents: [
       {
         widget: 'HeroBanner',
         data: {
@@ -252,7 +301,14 @@ export const pages: Record<string, PageContent> = {
     ]
   },
   'privacy-policy': {
-    title: 'Privacy policy', contents: [
+    seoDetails: {
+      keywords: [],
+      title: 'Privacy policy',
+      description: '',
+      metaImage: '',
+      hostname: ''
+    },
+    contents: [
       {
         widget: 'HeroBanner',
         data: {
@@ -316,7 +372,14 @@ export const pages: Record<string, PageContent> = {
   },
   'code-of-conduct':
         {
-          title: 'Code of conduct', contents:
+          seoDetails: {
+            keywords: [],
+            title: 'Code of conduct',
+            description: '',
+            metaImage: '',
+            hostname: ''
+          },
+          contents:
                 [
                   {
                     widget: 'HeroBanner',
@@ -334,7 +397,14 @@ export const pages: Record<string, PageContent> = {
         }
   ,
   error: {
-    title: 'Error',
+    seoDetails: {
+      keywords: [],
+      title: '',
+      description: '',
+      metaImage: '',
+      hostname: ''
+    },
+
     contents: [
       {
         widget: 'TextContent',
