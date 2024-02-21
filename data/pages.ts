@@ -7,7 +7,6 @@ export const pages: Record<string, PageContent> = {
       description: '',
       title: '',
       metaImage: '',
-      hostname: ''
     },
     contents: [
       {
@@ -91,7 +90,6 @@ export const pages: Record<string, PageContent> = {
       title: 'What we do',
       description: '',
       metaImage: '',
-      hostname: ''
     },
     contents: [
       {
@@ -136,7 +134,6 @@ export const pages: Record<string, PageContent> = {
       title: 'Articles',
       description: '',
       metaImage: '',
-      hostname: ''
     },
     contents: [
       {
@@ -160,7 +157,6 @@ export const pages: Record<string, PageContent> = {
       title: 'Blogs',
       description: '',
       metaImage: '',
-      hostname: ''
     },
     contents: [
       {
@@ -184,7 +180,6 @@ export const pages: Record<string, PageContent> = {
       keywords: [],
       description: '',
       metaImage: '',
-      hostname: ''
     },
     contents: [
       {
@@ -260,7 +255,6 @@ export const pages: Record<string, PageContent> = {
       title: 'Contact us',
       description: '',
       metaImage: '',
-      hostname: ''
     },
     contents: [
       {
@@ -283,7 +277,6 @@ export const pages: Record<string, PageContent> = {
       title: 'Partnerships',
       description: '',
       metaImage: '',
-      hostname: ''
     },
     contents: [
       {
@@ -306,7 +299,6 @@ export const pages: Record<string, PageContent> = {
       title: 'Privacy policy',
       description: '',
       metaImage: '',
-      hostname: ''
     },
     contents: [
       {
@@ -377,7 +369,6 @@ export const pages: Record<string, PageContent> = {
             title: 'Code of conduct',
             description: '',
             metaImage: '',
-            hostname: ''
           },
           contents:
                 [
@@ -402,7 +393,6 @@ export const pages: Record<string, PageContent> = {
       title: '',
       description: '',
       metaImage: '',
-      hostname: ''
     },
 
     contents: [

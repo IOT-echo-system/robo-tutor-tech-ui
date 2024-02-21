@@ -6,7 +6,7 @@ import type {SEODetailsType} from '../atoms'
 import {SEODetails} from '../atoms'
 
 export type PageContent = {contents: Content[]; seoDetails: SEODetailsType}
-export type SiteMetaData = {title: string}
+export type SiteMetaData = {title: string; hostname: string}
 type PageTemplatePropsType = {pageContent: PageContent; siteMetaData: SiteMetaData}
 export const PageTemplate: React.FC<PageTemplatePropsType> = ({pageContent, siteMetaData}) => {
   const {contents} = pageContent

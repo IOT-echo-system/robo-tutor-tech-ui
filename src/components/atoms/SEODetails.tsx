@@ -7,7 +7,6 @@ export type SEODetailsType = {
   description: string
   title: string
   metaImage: string
-  hostname: string
 }
 type SeoDetailsPropsType = {details: SEODetailsType; siteMetaData: SiteMetaData}
 export const SEODetails: React.FC<SeoDetailsPropsType> = ({details, siteMetaData}) => {
@@ -31,7 +30,7 @@ export const SEODetails: React.FC<SeoDetailsPropsType> = ({details, siteMetaData
       <meta content={title} property="og:title" />
       <meta content={details.description} property="og:description" />
       <meta content={details.title} property="og:site_name" />
-      <meta content={`https://${details.hostname}`} property="og:url" />
+      <meta content={`https://${siteMetaData.hostname}`} property="og:url" />
       <meta content={details.keywords.join(', ')} name="keywords" />
       <meta content={details.keywords.join(', ')} name="news_keywords" />
       <meta content="summary_large_image" name="twitter:card" />

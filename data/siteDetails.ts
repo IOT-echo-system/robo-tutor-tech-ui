@@ -1,5 +1,5 @@
 export const siteDetails = {
-  metadata: {title: 'Robotutor Tech'},
+  metadata: {title: 'Robotutor Tech', hostname: 'www.robotutortech.com'},
   header: {
     menus: [
       {label: 'What we do', link: '/what-we-do'},
