@@ -1,10 +1,11 @@
 import type {GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage} from 'next'
 import {pageList} from '../../data/pageList'
-import type {PageContent, SiteMetaData} from '../components/templates'
+import type {PageContent} from '../components/templates'
 import {PageTemplate} from '../components/templates'
 import {pages} from '../../data/pages'
 import {useRouter} from 'next/router'
 import {siteDetails} from '../../data/siteDetails'
+import type {SiteMetaData} from '../components/atoms'
 
 type PagePropsType = {pageContent: PageContent; siteMetaData: SiteMetaData}
 

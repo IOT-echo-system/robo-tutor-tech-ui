@@ -1,6 +1,6 @@
 import type {GetServerSideProps, NextPage} from 'next'
 import {siteDetails} from '../../data/siteDetails'
-import type {SiteMetaData} from '../components/templates'
+import type {SiteMetaData} from '../components/atoms'
 
 const Robots: NextPage = () => null
 export default Robots

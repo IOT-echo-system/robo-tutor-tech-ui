@@ -1,5 +1,23 @@
 export const siteDetails = {
-  metadata: {title: 'Robotutor Tech', hostname: 'www.robotutortech.com'},
+  metadata: {
+    title: 'Robotutor Tech', hostname: 'www.robotutortech.com', keywords: [
+      'Robotics',
+      'IoT',
+      'Innovation',
+      'Robotics Education',
+      'Personalized Tutoring',
+      'Hands-on Learning',
+      'Comprehensive Curriculum',
+      'Innovation',
+      'Problem-solving Skills',
+      'Innovation',
+      'robotutortech',
+      'robotutor tech',
+      'robo tutor tech',
+      'Robotutor tech'],
+    description: 'Robotutor Tech - Empowering Innovation in Robotics and IoT. We are a consultancy dedicated to helping businesses thrive in the digital age. Our expertise in strategy, design, and software engineering brings cutting-edge technology solutions to your doorstep. Let\'s innovate together!',
+    metaImage: ''
+  },
   header: {
     menus: [
       {label: 'What we do', link: '/what-we-do'},
@@ -38,10 +56,10 @@ export const siteDetails = {
     social: {
       title: 'Connect with us',
       socials: [
-        {icon: 'Facebook', link: 'facebook'},
-        {icon: 'LinkedIn', link: 'linkedin'},
-        {icon: 'Instagram', link: 'instagram'},
-        {icon: 'YouTube', link: 'youtube'}
+        {icon: 'Facebook', link: 'facebook', name: 'facebook'},
+        {icon: 'LinkedIn', link: 'linkedin', name: 'linkedin'},
+        {icon: 'Instagram', link: 'instagram', name: 'instagram'},
+        {icon: 'YouTube', link: 'youtube', name: 'youtube'}
       ]
     },
     copyrights: '© 2024 Robotutor Tech.'

@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
         {sections.map(({label, menus}) => {
           return (
             <MenuContainer spacing={1} key={label}>
-              <Typography variant={'subtitle1'}>
+              <Typography variant={'body1'}>
                 <strong>{label}</strong>
               </Typography>
               <Stack spacing={2} pl={2}>
@@ -50,13 +50,13 @@ export const Footer: React.FC = () => {
             </Typography>
           </Stack>
           <Stack direction={'row'} justifyContent={'center'} spacing={1}>
-            {social.socials.map(({link, icon}) => {
+            {social.socials.map(({link, icon, name}) => {
               const Icon = icons[icon as keyof typeof icons] as SvgIconComponent | undefined
               if (!Icon) {
                 return <></>
               }
               return (
-                <Link href={link} key={link}>
+                <Link href={link} key={link} aria-label={name}>
                   <Icon fontSize={'medium'} />
                 </Link>
               )

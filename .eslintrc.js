@@ -138,7 +138,7 @@ module.exports = {
       }
     },
     {
-      files: ['./data/pages.ts'],
+      files: ['./data/*.ts'],
       rules: {
         'max-len': 'off',
       }

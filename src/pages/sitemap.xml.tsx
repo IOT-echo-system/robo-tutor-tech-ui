@@ -2,7 +2,7 @@ import type {GetServerSideProps, NextPage} from 'next'
 import {siteDetails} from '../../data/siteDetails'
 import {pageList} from '../../data/pageList'
 import {formatDate} from '../utils/utils'
-import type {SiteMetaData} from '../components/templates'
+import type {SiteMetaData} from '../components/atoms'
 
 const Sitemap: NextPage = () => null
 export default Sitemap

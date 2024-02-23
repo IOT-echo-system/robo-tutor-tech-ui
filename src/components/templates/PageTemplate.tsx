@@ -2,11 +2,11 @@ import React from 'react'
 import {Stack} from '@mui/material'
 import * as widgets from '../widgets'
 import type {Content} from '../widgets/widget'
-import type {SEODetailsType} from '../atoms'
+import type {SEODetailsType, SiteMetaData} from '../atoms'
 import {SEODetails} from '../atoms'
 
 export type PageContent = {contents: Content[]; seoDetails: SEODetailsType}
-export type SiteMetaData = {title: string; hostname: string}
+
 type PageTemplatePropsType = {pageContent: PageContent; siteMetaData: SiteMetaData}
 export const PageTemplate: React.FC<PageTemplatePropsType> = ({pageContent, siteMetaData}) => {
   const {contents} = pageContent

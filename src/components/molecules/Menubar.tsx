@@ -36,7 +36,7 @@ export const Menubar: React.FC = () => {
   return (
     <>
       {!media.md && (
-        <IconButton onClick={handleMobileMenu(true)}>
+        <IconButton onClick={handleMobileMenu(true)} aria-label={'Menu'}>
           <Menu />
         </IconButton>
       )}
