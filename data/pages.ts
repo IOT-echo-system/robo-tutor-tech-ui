@@ -35,7 +35,7 @@ export const pages: Record<string, PageContent> = {
           bg: 'color',
           color: 'skyblue',
           image: {
-            src: '/img/banner.jpg',
+            src: '/img/banner.webp',
             alt: 'what-we-do'
           },
         }
@@ -55,12 +55,12 @@ export const pages: Record<string, PageContent> = {
           cards: [
             {
               title: 'Robotics Tutoring',
-              image: {src: '/img/banner.jpg', alt: 'Tutoring'},
+              image: {src: '/img/banner.webp', alt: 'Tutoring'},
               content: 'Our personalized tutoring sessions bring robotics education right to your doorstep. Our experienced tutors will guide you through hands-on learning experiences, making robotics fun and accessible for all ages.'
             },
             {
               title: 'Industrial Automation Consultancy',
-              image: {src: '/img/banner.jpg', alt: ''},
+              image: {src: '/img/industrial-automation.webp', alt: ''},
               content: 'For businesses seeking to streamline their operations and increase efficiency, our consultancy services offer tailor-made solutions using the latest automation technologieConsultancys.'
             },
           ]
@@ -73,17 +73,17 @@ export const pages: Record<string, PageContent> = {
           cards: [
             {
               title: 'Experience',
-              image: {src: '/img/banner.jpg', alt: 'Experience'},
+              image: {src: '/img/experienced-tutor.webp', alt: 'Experience'},
               content: 'With years of experience in robotics and industrial automation, we have the knowledge and expertise to help you achieve your goals.'
             },
             {
               title: 'Innovation',
-              image: {src: '/img/innovations.jpg', alt: 'Innovation'},
+              image: {src: '/img/innovations.webp', alt: 'Innovation'},
               content: 'We are constantly exploring new technologies and techniques to ensure that our services are at the forefront of innovation.'
             },
             {
               title: 'Passion',
-              image: {src: '/img/banner.jpg', alt: 'Passion'},
+              image: {src: '/img/passion.webp', alt: 'Passion'},
               content: 'Robotics is more than just a job for us - it\'s our passion. We are dedicated to inspiring the next generation of innovators and problem-solvers.'
             },
           ]
@@ -118,7 +118,7 @@ export const pages: Record<string, PageContent> = {
           bg: 'color',
           color: 'skyblue',
           image: {
-            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.jpg',
+            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
           },
         }
@@ -162,7 +162,7 @@ export const pages: Record<string, PageContent> = {
           bg: 'color',
           color: 'skyblue',
           image: {
-            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.jpg',
+            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
           },
         }
@@ -185,7 +185,7 @@ export const pages: Record<string, PageContent> = {
           bg: 'color',
           color: 'skyblue',
           image: {
-            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.jpg',
+            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
           },
         }
@@ -208,7 +208,7 @@ export const pages: Record<string, PageContent> = {
           bg: 'color',
           color: 'skyblue',
           image: {
-            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.jpg',
+            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
           },
         }
@@ -229,22 +229,22 @@ export const pages: Record<string, PageContent> = {
           cards: [
             {
               title: 'Experienced Tutors',
-              image: {src: '/img/banner.jpg', alt: 'Experienced Tutors'},
+              image: {src: '/img/experienced-tutor.webp', alt: 'Experienced Tutors'},
               content: 'Our tutors are experts in their field, with years of experience in robotics and industrial automation.'
             },
             {
               title: 'Personalized Learning',
-              image: {src: '/img/banner.jpg', alt: 'Personalized Learning'},
+              image: {src: '/img/personalized-learnings.webp', alt: 'Personalized Learning'},
               content: 'We tailor our tutoring sessions to meet the unique needs of each student, ensuring that they get the most out of their experience.'
             },
             {
               title: 'Comprehensive Curriculum',
-              image: {src: '/img/banner.jpg', alt: 'Comprehensive Curriculum'},
+              image: {src: '/img/comprehensive-curriculum.webp', alt: 'Comprehensive Curriculum'},
               content: 'Our curriculum covers a wide range of topics, from basic robotics principles to advanced industrial automation techniques.'
             },
             {
               title: 'Flexible Scheduling',
-              image: {src: '/img/banner.jpg', alt: 'Flexible Scheduling'},
+              image: {src: '/img/flexible-schedule.webp', alt: 'Flexible Scheduling'},
               content: 'We understand that every student has different scheduling needs, which is why we offer flexible tutoring sessions to fit your schedule.'
             },
           ]
@@ -283,7 +283,7 @@ export const pages: Record<string, PageContent> = {
           bg: 'color',
           color: 'skyblue',
           image: {
-            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.jpg',
+            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
           },
         }
@@ -305,7 +305,7 @@ export const pages: Record<string, PageContent> = {
           bg: 'color',
           color: 'skyblue',
           image: {
-            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.jpg',
+            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
           },
         }
@@ -327,7 +327,7 @@ export const pages: Record<string, PageContent> = {
           bg: 'color',
           color: 'skyblue',
           image: {
-            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.jpg',
+            src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
           },
         }
@@ -398,7 +398,7 @@ export const pages: Record<string, PageContent> = {
                       bg: 'color',
                       color: 'skyblue',
                       image: {
-                        src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.jpg',
+                        src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
                         alt: 'what-we-do'
                       },
                     }
