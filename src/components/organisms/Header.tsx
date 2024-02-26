@@ -10,6 +10,7 @@ const Container = styled(Stack)(({theme}) => ({
   minHeight: theme.spacing(6),
   boxShadow: theme.shadows[2],
   position: 'fixed',
+  zIndex: 999,
   width: '100%',
   [theme.breakpoints.up('md')]: {
     minHeight: theme.spacing(8)

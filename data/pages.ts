@@ -287,6 +287,12 @@ export const pages: Record<string, PageContent> = {
             alt: 'what-we-do'
           },
         }
+      },
+      {
+        widget: 'ContactUs',
+        data: {
+          title: 'Contact us',
+        }
       }
     ]
   },

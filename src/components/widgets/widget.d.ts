@@ -1,4 +1,4 @@
-type WidgetType = 'TextContent' | 'HeroBanner' | 'TextWithCTA' | 'ContentCards'
+type WidgetType = 'TextContent' | 'HeroBanner' | 'TextWithCTA' | 'ContentCards' | 'ContactUs'
 
 export type WidgetStyles = {width: 'Boxed' | 'FullWidth' | 'Center'}
 export type WidgetPropType<T = unknown> = {styles?: WidgetStyles; data: T}
