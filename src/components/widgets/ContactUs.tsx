@@ -76,8 +76,8 @@ export const ContactUs: React.FC<WidgetPropType<ContactUsPropsType>> = ({data}) 
 
   return (
     <BoxedContainer justifyContent={'center'} alignItems={'center'} mt={4} mb={4} spacing={2}>
-      <Stack sx={{width: {sx: '100%', sm: '80%', md: '60%', lg: '40%'}}}>
-        <Stack>
+      <Stack sx={{width: {sx: '100%', sm: '80%', md: '60%', lg: '40%'}}} spacing={2}>
+        <Stack spacing={2}>
           <Typography variant={'h4'} component={'h2'}>
             {data.title}
           </Typography>
