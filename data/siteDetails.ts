@@ -25,6 +25,7 @@ export const siteDetails = {
       {label: 'Blogs', link: '/blogs'},
       {label: 'About', link: '/about-us'},
       {label: 'Contact', link: '/contact-us'},
+      {label: 'IOT', link: 'https://iot.robotutortech.com'},
     ]
   },
   footer: {
