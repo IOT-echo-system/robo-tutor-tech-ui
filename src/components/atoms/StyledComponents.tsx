@@ -9,12 +9,11 @@ export const BoxedContainer = styled(Stack)(({theme}) => ({
   }
 }))
 
-export const Link = styled(LinkComponent)<LinkProps & {disableUnderline?: 'true' | 'false'}>(({
-  theme,
-  disableUnderline
-}) => ({
-  textDecoration: disableUnderline !== 'true' ? 'underline' : 'none',
-  ['&:hover']: {
-    color: theme.palette.primary.dark
-  }
-}))
+export const Link = styled(LinkComponent)<LinkProps & {disableUnderline?: 'true' | 'false'}>(
+  ({theme, disableUnderline}) => ({
+    textDecoration: disableUnderline !== 'true' ? 'underline' : 'none',
+    ['&:hover']: {
+      color: theme.palette.primary.dark
+    }
+  })
+)

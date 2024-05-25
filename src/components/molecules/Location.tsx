@@ -3,21 +3,24 @@ import {Stack, Typography} from '@mui/material'
 import {Link} from '../atoms'
 
 export type LocationProps = {
-  companyName: string,
-  address1: string,
-  address2: string,
-  address3?: string,
-  address4?: string,
-  phone: string,
-  email: string,
-  map: string,
+  companyName: string
+  address1: string
+  address2: string
+  address3?: string
+  address4?: string
+  phone: string
+  email: string
+  map: string
 }
-export const Location: React.FC<LocationProps> = (location) => {
-
+export const Location: React.FC<LocationProps> = location => {
   return (
     <Stack spacing={2} justifyContent={'start'}>
-      <Typography variant={'h4'} component={'div'}>Office location</Typography>
-      <Typography variant={'h5'} component={'div'}>{location.companyName}</Typography>
+      <Typography variant={'h4'} component={'div'}>
+        Office location
+      </Typography>
+      <Typography variant={'h5'} component={'div'}>
+        {location.companyName}
+      </Typography>
       <Stack>
         <Typography>{location.address1}</Typography>
         <Typography>{location.address2}</Typography>
@@ -26,11 +29,15 @@ export const Location: React.FC<LocationProps> = (location) => {
       </Stack>
 
       <Stack direction={'row'} spacing={2} alignItems={'center'}>
-        <Typography><strong>Phone</strong></Typography>
+        <Typography>
+          <strong>Phone</strong>
+        </Typography>
         <Link href={`tel:${location.phone}`}>{location.phone}</Link>
       </Stack>
       <Stack direction={'row'} spacing={2} alignItems={'center'}>
-        <Typography><strong>Email</strong></Typography>
+        <Typography>
+          <strong>Email</strong>
+        </Typography>
         <Link href={`mailto:${location.email}`}>{location.email}</Link>
       </Stack>
       <Typography variant={'h5'} component={Link} href={location.map} target={'_blank'}>

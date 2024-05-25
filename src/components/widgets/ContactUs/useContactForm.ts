@@ -4,15 +4,15 @@ import type {TextFieldProps} from '@mui/material'
 import {useForm} from '../../../hooks'
 import WebClient from 'web-client-starter/lib'
 
-type ContactFormValuesType = {name: string, email: string, subject: string, message: string, consent: boolean}
+type ContactFormValuesType = {name: string; email: string; subject: string; message: string; consent: boolean}
 type UseContactFormType = () => {
-  handleSubmit: () => void;
-  submitted: boolean;
-  onChange: <U extends keyof ContactFormValuesType>(keyName: U, value: ContactFormValuesType[U]) => void;
-  onSubmit: (handleSubmit: (values: ContactFormValuesType) => void) => (event: React.FormEvent) => void;
-  values: ContactFormValuesType;
-  responseMessage: string;
-  error: boolean;
+  handleSubmit: () => void
+  submitted: boolean
+  onChange: <U extends keyof ContactFormValuesType>(keyName: U, value: ContactFormValuesType[U]) => void
+  onSubmit: (handleSubmit: (values: ContactFormValuesType) => void) => (event: React.FormEvent) => void
+  values: ContactFormValuesType
+  responseMessage: string
+  error: boolean
   fields: TextFieldProps[]
 }
 
