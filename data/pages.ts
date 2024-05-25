@@ -25,7 +25,7 @@ export const pages: Record<string, PageContent> = {
         'Robotutor tech'],
       description: 'Robotutor Tech - Empowering Innovation in Robotics and IoT. We are a consultancy dedicated to helping businesses thrive in the digital age. Our expertise in strategy, design, and software engineering brings cutting-edge technology solutions to your doorstep. Let\'s innovate together!',
       title: '',
-      metaImage: '',
+      metaImage: ''
     },
     contents: [
       {
@@ -37,7 +37,7 @@ export const pages: Record<string, PageContent> = {
           image: {
             src: '/img/banner.webp',
             alt: 'what-we-do'
-          },
+          }
         }
       },
       {
@@ -62,7 +62,7 @@ export const pages: Record<string, PageContent> = {
               title: 'Industrial Automation Consultancy',
               image: {src: '/img/industrial-automation.webp', alt: ''},
               content: 'For businesses seeking to streamline their operations and increase efficiency, our consultancy services offer tailor-made solutions using the latest automation technologieConsultancys.'
-            },
+            }
           ]
         }
       },
@@ -85,7 +85,7 @@ export const pages: Record<string, PageContent> = {
               title: 'Passion',
               image: {src: '/img/passion.webp', alt: 'Passion'},
               content: 'Robotics is more than just a job for us - it\'s our passion. We are dedicated to inspiring the next generation of innovators and problem-solvers.'
-            },
+            }
           ]
         }
       },
@@ -108,7 +108,7 @@ export const pages: Record<string, PageContent> = {
       keywords: [],
       title: 'What we do',
       description: '',
-      metaImage: '',
+      metaImage: ''
     },
     contents: [
       {
@@ -120,7 +120,7 @@ export const pages: Record<string, PageContent> = {
           image: {
             src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
-          },
+          }
         }
       },
       {
@@ -152,7 +152,7 @@ export const pages: Record<string, PageContent> = {
       keywords: [],
       title: 'Articles',
       description: '',
-      metaImage: '',
+      metaImage: ''
     },
     contents: [
       {
@@ -164,7 +164,7 @@ export const pages: Record<string, PageContent> = {
           image: {
             src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
-          },
+          }
         }
       }
     ]
@@ -175,7 +175,7 @@ export const pages: Record<string, PageContent> = {
       keywords: [],
       title: 'Blogs',
       description: '',
-      metaImage: '',
+      metaImage: ''
     },
     contents: [
       {
@@ -187,7 +187,7 @@ export const pages: Record<string, PageContent> = {
           image: {
             src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
-          },
+          }
         }
       }
     ]
@@ -198,7 +198,7 @@ export const pages: Record<string, PageContent> = {
       title: 'About us',
       keywords: [],
       description: '',
-      metaImage: '',
+      metaImage: ''
     },
     contents: [
       {
@@ -210,7 +210,7 @@ export const pages: Record<string, PageContent> = {
           image: {
             src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
-          },
+          }
         }
       },
       {
@@ -246,7 +246,7 @@ export const pages: Record<string, PageContent> = {
               title: 'Flexible Scheduling',
               image: {src: '/img/flexible-schedule.webp', alt: 'Flexible Scheduling'},
               content: 'We understand that every student has different scheduling needs, which is why we offer flexible tutoring sessions to fit your schedule.'
-            },
+            }
           ]
         }
       },
@@ -273,7 +273,7 @@ export const pages: Record<string, PageContent> = {
       keywords: [],
       title: 'Contact us',
       description: '',
-      metaImage: '',
+      metaImage: ''
     },
     contents: [
       {
@@ -285,13 +285,23 @@ export const pages: Record<string, PageContent> = {
           image: {
             src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
-          },
+          }
         }
       },
       {
         widget: 'ContactUs',
         data: {
           title: 'Contact us',
+          location: {
+            companyName: 'Robotutor tech pvt ltd',
+            address1: 'Flat no. 104, Luck apartment',
+            address2: 'Blunt square, Durgapuri',
+            address3: 'Lucknow, Uttar Pradesh',
+            address4: 'India - 226004',
+            phone: '+91 9560773418',
+            email: 'contact@robotutortech.com',
+            map: 'https://maps.app.goo.gl/ZgM9Jw6oSpUg7UWe6'
+          }
         }
       }
     ]
@@ -301,7 +311,7 @@ export const pages: Record<string, PageContent> = {
       keywords: [],
       title: 'Partnerships',
       description: '',
-      metaImage: '',
+      metaImage: ''
     },
     contents: [
       {
@@ -313,7 +323,7 @@ export const pages: Record<string, PageContent> = {
           image: {
             src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
-          },
+          }
         }
       }
     ]
@@ -323,7 +333,7 @@ export const pages: Record<string, PageContent> = {
       keywords: [],
       title: 'Privacy policy',
       description: '',
-      metaImage: '',
+      metaImage: ''
     },
     contents: [
       {
@@ -335,7 +345,7 @@ export const pages: Record<string, PageContent> = {
           image: {
             src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
             alt: 'what-we-do'
-          },
+          }
         }
       },
       {
@@ -388,36 +398,36 @@ export const pages: Record<string, PageContent> = {
     ]
   },
   'code-of-conduct':
-        {
-          seoDetails: {
-            keywords: [],
-            title: 'Code of conduct',
-            description: '',
-            metaImage: '',
-          },
-          contents:
-                [
-                  {
-                    widget: 'HeroBanner',
-                    data: {
-                      title: 'Code of conduct',
-                      bg: 'color',
-                      color: 'skyblue',
-                      image: {
-                        src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
-                        alt: 'what-we-do'
-                      },
-                    }
-                  }
-                ]
-        }
+    {
+      seoDetails: {
+        keywords: [],
+        title: 'Code of conduct',
+        description: '',
+        metaImage: ''
+      },
+      contents:
+        [
+          {
+            widget: 'HeroBanner',
+            data: {
+              title: 'Code of conduct',
+              bg: 'color',
+              color: 'skyblue',
+              image: {
+                src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
+                alt: 'what-we-do'
+              }
+            }
+          }
+        ]
+    }
   ,
   error: {
     seoDetails: {
       keywords: [],
       title: '',
       description: '',
-      metaImage: '',
+      metaImage: ''
     },
 
     contents: [
