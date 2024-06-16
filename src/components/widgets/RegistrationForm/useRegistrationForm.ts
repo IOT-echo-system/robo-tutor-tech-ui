@@ -6,7 +6,7 @@ import type {FormInputType} from '../../atoms'
 const options = {
   applicationFor: [
     {label: 'Summer Internship', value: 'summerInternship'},
-    {label: 'Teacher\'s skills development program', value: 'teachersSkillDevelopmentProgram'}
+    {label: 'Teacher skills development program', value: 'teachersSkillDevelopmentProgram'}
   ],
   coursePursuing: [
     {label: '', value: ''},
