@@ -27,11 +27,15 @@ const MyApp = ({Component, pageProps, site}: MyAppProps): React.JSX.Element => {
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
   const appProps = await App.getInitialProps(appContext)
-  const siteInfo = await CMSService.getSiteInfo()
-  const navLink = await CMSService.getMainMenu()
-  const footer = await CMSService.getFooter()
+  try {
+    const siteInfo = await CMSService.getSiteInfo()
+    const navLink = await CMSService.getMainMenu()
+    const footer = await CMSService.getFooter()
 
-  return {...appProps, site: {siteInfo, header: {menus: navLink}, footer}}
+    return {...appProps, site: {siteInfo, header: {menus: navLink}, footer}}
+  } catch (error: unknown) {
+    return {...appProps}
+  }
 }
 
 export default MyApp
