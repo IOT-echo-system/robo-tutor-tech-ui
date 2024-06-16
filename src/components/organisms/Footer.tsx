@@ -20,20 +20,20 @@ const MenuContainer = styled(Stack)(({theme}) => ({
 }))
 
 export const Footer: React.FC = () => {
-  const {sections, social, copyrights} = useSelector(state => state.site.footer)
+  const {sections, copyrights, social} = useSelector(state => state.site.footer)
   const media = useMedia()
 
   return (
     <Container spacing={media.md ? 4 : 0} p={media.md ? 4 : 0}>
       <Stack direction={media.md ? 'row' : 'column'} justifyContent={'space-evenly'}>
-        {sections.map(({label, menus}) => {
+        {sections.map(({title, navLinks}) => {
           return (
-            <MenuContainer spacing={1} key={label}>
+            <MenuContainer spacing={1} key={title}>
               <Typography variant={'body1'}>
-                <strong>{label}</strong>
+                <strong>{title}</strong>
               </Typography>
               <Stack spacing={2} pl={2}>
-                {menus.map(({link, label}) => (
+                {navLinks.map(({link, label}) => (
                   <MenuItem key={link} link={link} label={label} />
                 ))}
               </Stack>

@@ -1,25 +1,33 @@
-import {siteDetails} from '../../../data/siteDetails'
 import type {TRootActions} from '../../typing/store'
 
 export const SiteAction = {
   SITE_UPDATE_STATE: 'SITE_UPDATE_STATE'
 } as const
 
+export type SiteInfo = {title: string; subtitle?: string}
+export type MenuLink = {link: string; label: string; newTab: boolean}
+export type Section = {title: string; navLinks: MenuLink[]}
+export type Social = {icon: string; link: string; name: string}
+export type FooterInfo = {sections: Section[]; copyrights: string}
+
 export type SiteStateType = {
-  metadata: {
-    title: string
-    subtitle?: string
-  }
-  header: {
-    menus: Array<{link: string; label: string}>
-  }
+  siteInfo: SiteInfo
+  header: {menus: MenuLink[]}
   footer: {
-    sections: Array<{label: string; menus: Array<{link: string; label: string}>}>
-    social: {title: string; socials: Array<{icon: string; link: string; name: string}>}
+    sections: Section[]
+    social: {title: string; socials: Social[]}
     copyrights: string
   }
 }
-export const initSiteState: SiteStateType = siteDetails
+export const initSiteState: SiteStateType = {
+  footer: {
+    copyrights: '',
+    sections: [],
+    social: {socials: [], title: ''}
+  },
+  header: {menus: []},
+  siteInfo: {title: '', subtitle: ''}
+}
 
 const siteReducer = (state: SiteStateType, action: TRootActions): SiteStateType => {
   switch (action.type) {

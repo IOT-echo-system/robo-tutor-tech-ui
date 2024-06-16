@@ -21,8 +21,7 @@ export const siteDetails = {
   header: {
     menus: [
       {label: 'What we do', link: '/what-we-do'},
-      {label: 'Articles', link: '/articles'},
-      {label: 'Blogs', link: '/blogs'},
+      {label: 'Courses', link: '/courses'},
       {label: 'About', link: '/about-us'},
       {label: 'Contact', link: '/contact-us'},
       {label: 'IOT', link: 'https://iot.robotutortech.com'},

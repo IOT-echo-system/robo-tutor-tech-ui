@@ -6,6 +6,8 @@ export const pageList = [
   '/contact-us',
   '/partnerships',
   '/privacy-policy',
-  '/code-of-conduct'
+  '/code-of-conduct',
+  '/courses',
+  '/register'
 ]
 

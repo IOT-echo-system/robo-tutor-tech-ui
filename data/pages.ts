@@ -32,10 +32,12 @@ export const pages: Record<string, PageContent> = {
         widget: 'HeroBanner',
         data: {
           title: 'Unlock your \'Innovation Spirit\'',
-          bg: 'color',
+          bg: 'image',
           color: 'skyblue',
+          titleColor: 'light',
+          size: 'large',
           image: {
-            src: '/img/banner.webp',
+            src: '/img/banner/banner-1.webp',
             alt: 'what-we-do'
           }
         }
@@ -55,7 +57,7 @@ export const pages: Record<string, PageContent> = {
           cards: [
             {
               title: 'Robotics Tutoring',
-              image: {src: '/img/banner.webp', alt: 'Tutoring'},
+              image: {src: '/img/personalized-learnings.webp', alt: 'Tutoring'},
               content: 'Our personalized tutoring sessions bring robotics education right to your doorstep. Our experienced tutors will guide you through hands-on learning experiences, making robotics fun and accessible for all ages.'
             },
             {
@@ -193,7 +195,6 @@ export const pages: Record<string, PageContent> = {
     ]
   },
   'about-us': {
-
     seoDetails: {
       title: 'About us',
       keywords: [],
@@ -353,6 +354,7 @@ export const pages: Record<string, PageContent> = {
         styles: {width: 'Center'},
         data: {
           content: `<div>
+             <a href="/training-privacy-policy" target="_blank">Training at Robotutor tech privacy policy.</a>
              <p>This Privacy Policy explains how Robotutor Tech ("we", "us", or "our") collects, uses, and discloses information about you when you access or use our website or services.</p>
             <h2>Information We Collect</h2>
             <p>We may collect certain personal information about you when you use our website or services. This information may include:</p>
@@ -397,31 +399,29 @@ export const pages: Record<string, PageContent> = {
       }
     ]
   },
-  'code-of-conduct':
-    {
-      seoDetails: {
-        keywords: [],
-        title: 'Code of conduct',
-        description: '',
-        metaImage: ''
-      },
-      contents:
-        [
-          {
-            widget: 'HeroBanner',
-            data: {
-              title: 'Code of conduct',
-              bg: 'color',
-              color: 'skyblue',
-              image: {
-                src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
-                alt: 'what-we-do'
-              }
+  'code-of-conduct': {
+    seoDetails: {
+      keywords: [],
+      title: 'Code of conduct',
+      description: '',
+      metaImage: ''
+    },
+    contents:
+      [
+        {
+          widget: 'HeroBanner',
+          data: {
+            title: 'Code of conduct',
+            bg: 'color',
+            color: 'skyblue',
+            image: {
+              src: 'https://www.robotutortech.com/wp-content/themes/boostup-business/assets/images/inner-banner.webp',
+              alt: 'what-we-do'
             }
           }
-        ]
-    }
-  ,
+        }
+      ]
+  },
   error: {
     seoDetails: {
       keywords: [],
@@ -440,6 +440,165 @@ export const pages: Record<string, PageContent> = {
                              <h2>What next?</h2>
                              <p>Try checking the URL for errors, or hit the back button on your browser.</p>
                              <p>Go to <a href="/">Homepage</a></p>`
+        }
+      }
+    ]
+  },
+  courses: {
+    seoDetails: {
+      keywords: [],
+      title: 'Courses',
+      description: '',
+      metaImage: ''
+    },
+
+    contents: [
+      {
+        widget: 'HeroBanner',
+        data: {
+          title: 'Courses',
+          bg: 'image',
+          color: 'skyblue',
+          titleColor: 'light',
+          size: 'large',
+          image: {
+            src: '/img/banner/robotic-hand.webp',
+            alt: 'what-we-do'
+          }
+        }
+      },
+      {
+        widget: 'TextContent',
+        styles: {width: 'Center'},
+        data: {
+          content: `<h2>Embedded system (Robotics)</h2>
+                    <h3>30 Days (30 projects)</h3>
+                    <ul style="margin-left:30px">
+                        <li>Basic electronics</li>
+                        <li>Power supply</li>
+                        <li>Analog circuits</li>
+                        <li>PCB Designing</li>
+                        <li>C Programming</li>
+                        <li>Arduino</li>
+                        <li>Motor (DC motor, Servo motor, Stepper motor)</li>
+                        <li>Relay (Electromagnetic switch)</li>
+                        <li>7 segment display</li>
+                        <li>LCD (Liquid Crystal Display)</li>
+                        <li>Dot matrix</li>
+                        <li>Ultrasonic</li>
+                        <li>RF Communication & Identification</li>
+                        <li>Serial communication</li>
+                        <li>GSM & GPS</li>
+                    </ul>
+                    <br/>
+                    <h2>Internet of things (IOT)</h2>
+                    <h3>45 Days (45 projects)</h3>
+                    <h4 style="font-weight:500">All topics of Embedded system</h4>
+                    <ul style="margin-left:30px">
+                        <li>Basic electronics</li>
+                        <li>Power supply</li>
+                        <li>Analog circuits</li>
+                        <li>PCB Designing</li>
+                        <li>C Programming</li>
+                        <li>Arduino</li>
+                        <li>Motor (DC motor, Servo motor, Stepper motor)</li>
+                        <li>Relay (Electromagnetic switch)</li>
+                        <li>7 segment display</li>
+                        <li>LCD (Liquid Crystal Display)</li>
+                        <li>Dot matrix</li>
+                        <li>Ultrasonic</li>
+                        <li>RF Communication & Identification</li>
+                        <li>Serial communication</li>
+                        <li>GSM & GPS</li>
+                    </ul>`
+        }
+      },
+      {
+        widget: 'TextWithCTA',
+        data: {
+          text: 'Unlock your \'Innovation spirit\'',
+          link: '/register',
+          ctaText: 'Register now'
+        }
+      }
+    ]
+  },
+  register: {
+    seoDetails: {
+      keywords: [],
+      title: 'Register',
+      description: '',
+      metaImage: ''
+    },
+    contents: [
+      {
+        widget: 'HeroBanner',
+        data: {
+          title: 'Register',
+          bg: 'image',
+          color: 'skyblue',
+          titleColor: 'light',
+          size: 'large',
+          image: {
+            src: '/img/banner/banner-1.webp',
+            alt: 'what-we-do'
+          }
+        }
+      },
+      {
+        widget: 'RegistrationForm',
+        data: {}
+      }
+    ]
+  },
+  'training-privacy-policy': {
+    seoDetails: {
+      keywords: [],
+      title: 'Privacy policy',
+      description: '',
+      metaImage: ''
+    },
+    contents: [
+      {
+        widget: 'HeroBanner',
+        data: {
+          title: 'Privacy policy',
+          bg: 'color',
+          color: 'skyblue',
+          image: {
+            src: '/img/banner/banner-1.webp',
+            alt: 'what-we-do'
+          }
+        }
+      },
+      {
+        widget: 'TextContent',
+        styles: {width: 'Center'},
+        data: {
+          content: `<ul>
+                        <li>The Registration Fees is non refundable.</li>
+                        <li>Training fees at the time of joining is not accepted in installments.</li>
+                        <li>After submission of the total fees, if the trainee wants to leave, he/she will have to pay INR 1,000 as a penalty.</li>
+                        <li>The amount will be refunded after deducting the registration cost, GST (Included in the Training Fee), the amount charged as penalty and the charges deducted as per the classes taken in the training program.</li>
+                        <li>The Trainee should take good care of all their personal belongings (For example -laptops, vehicle, helmet, mobile etc). The company holds no responsibility for any kind of Loss/Damage/Theft.</li>
+                        <li>If any Trainee is medically unfit during the training tenure, company is not responsible for the same. Company can only assist the trainee for medical aids.</li>
+                        <li>If Trainee is suffering from any kind of infectious disease, company will not allow him/her to attend the classes. The recovery classes will be provided once the trainee is medically fit.</li>
+                        <li>Trainees, who are not a resident of Lucknow, are supposed to provide the local address at the time of joining.</li>
+                        <li>If any Trainee is found spoiling the company’s asset, he/she will be charged a penalty, two times of the original cost of the asset.</li>
+                        <li>A minimum of 85% attendance is mandatory for all the trainees in order to receive the Certificate of Completion for the training. In order to score high grade, 100% attendance is compulsory.</li>
+                        <li>Trainees should get their assignments checked by their respective consultants in order to score high grade in their Certificates.</li>
+                        <li>Identity Cards issued during the training are mandatory to wear in Robotutor Tech premises.</li>
+                        <li>Trainees are supposed to maintain the discipline and decorum of the company. If any Trainee is found guilty of his action in ruining the image of the company, company can take strict legal actions and can expel the Trainee without refunding the fee.</li>
+                        <li>For any queries, Trainees can contact at <a href="mailto:contact@robotutortech.com">contact@robotutortech.com</a></li>
+                    </ul>`
+        }
+      },
+      {
+        widget: 'TextWithCTA',
+        data: {
+          text: 'Get in touch with us',
+          link: '/contact-us',
+          ctaText: 'Get in touch'
         }
       }
     ]

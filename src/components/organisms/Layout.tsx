@@ -1,16 +1,25 @@
 import type {PropsWithChildren} from 'react'
+import {useEffect} from 'react'
 import React from 'react'
 import {Stack, styled} from '@mui/material'
 import {Header} from './Header'
+import {useDispatch, useMedia} from '../../hooks'
+import type {SiteStateType} from '../../store/reducers/site'
+import {updateSite} from '../../store/actions/site'
 import {Footer} from './Footer'
-import {useMedia} from '../../hooks'
 
 const Container = styled(Stack)(() => ({
   minHeight: '100vh'
 }))
 
-export const Layout: React.FC<PropsWithChildren> = ({children}) => {
+export const Layout: React.FC<PropsWithChildren<{site: SiteStateType}>> = ({children, site}) => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(updateSite(site))
+  }, [])
+
   const media = useMedia()
+
   return (
     <Container justifyContent={'space-between'}>
       <Stack>

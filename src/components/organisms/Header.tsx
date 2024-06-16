@@ -8,6 +8,7 @@ import Link from 'next/link'
 const Container = styled(Stack)(({theme}) => ({
   background: theme.palette.common.white,
   minHeight: theme.spacing(6),
+  justifyContent: 'center',
   boxShadow: theme.shadows[2],
   position: 'fixed',
   zIndex: 999,
@@ -19,6 +20,7 @@ const Container = styled(Stack)(({theme}) => ({
 
 const SiteTitle = styled(Typography)(({theme}) => ({
   fontSize: theme.spacing(2.5),
+  height: '100%',
   '&:hover': {
     textDecoration: 'none'
   },
@@ -28,13 +30,13 @@ const SiteTitle = styled(Typography)(({theme}) => ({
 }))
 
 export const Header: React.FC = () => {
-  const metadata = useSelector(state => state.site.metadata)
+  const metadata = useSelector(state => state.site.siteInfo)
   return (
     <Container>
       <BoxedContainer direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
-        <Link href={'/'}>
+        <Typography component={Link} href={'/'} sx={{'&:hover': {textDecoration: 'none'}}}>
           <SiteTitle>{metadata.title}</SiteTitle>
-        </Link>
+        </Typography>
         <Menubar />
       </BoxedContainer>
     </Container>
