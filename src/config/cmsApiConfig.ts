@@ -1,6 +1,6 @@
-export const PUBLIC_URL = 'http://localhost:1337'
 export const cmsApiConfig = {
-  baseUrl: `${PUBLIC_URL}/api`,
+  baseUrl: '/api',
+  assets: '/assets',
   siteInfo: '/site-info',
   mainMenu: '/main-menu?populate=navLink',
   footer: '/footer?populate=sections.navLinks,social.socials',

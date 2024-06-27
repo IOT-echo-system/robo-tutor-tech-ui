@@ -4,7 +4,7 @@ import {Button, Card, CardActions, CardContent, CardMedia, Stack, styled, Typogr
 import type {ImageType} from '../atoms'
 import {BoxedContainer} from '../atoms'
 import {useMedia} from '../../hooks'
-import {PUBLIC_URL} from '../../config/cmsApiConfig'
+import {cmsApiConfig} from '../../config/cmsApiConfig'
 
 const Container = styled(Stack)(({theme}) => ({
   justifyContent: 'center',
@@ -40,10 +40,8 @@ export const ContentCards: React.FC<WidgetPropType<ContentCardsPropsType>> = ({d
   const cardWidth = getCardWidth(Math.min(data.cards.length, 4))
   return (
     <Container>
-      <BoxedContainer justifyContent={'center'} alignItems={'center'}>
-        <Typography variant={'h2'} textAlign={'center'}>
-          {data.heading}
-        </Typography>
+      <BoxedContainer spacing={2}>
+        <Typography variant={'h2'}>{data.heading}</Typography>
         <Stack direction={media.md ? 'row' : 'column'} flexWrap={'wrap'}>
           {data.cards.map((card, index) => {
             return (
@@ -55,7 +53,7 @@ export const ContentCards: React.FC<WidgetPropType<ContentCardsPropsType>> = ({d
                   component="img"
                   alt={card.title}
                   height={media.md ? '220' : '180'}
-                  image={PUBLIC_URL + card.image.data.attributes.formats.small.url}
+                  image={cmsApiConfig.assets + card.image.data.attributes.formats.small.url}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">

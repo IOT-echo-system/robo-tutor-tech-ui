@@ -38,16 +38,18 @@ export const TextWithCTA: React.FC<WidgetPropType<TextWithCTADataType>> = ({data
   const media = useMedia()
   return (
     <Container justifyContent={'center'}>
-      <BoxedContainer
-        direction={media.md ? 'row' : 'column'}
-        justifyContent={media.md ? 'space-between' : 'center'}
-        alignItems={'center'}
-        spacing={4}
-      >
-        <Typography variant={'h2'} textAlign={'center'}>
-          {data.text}
-        </Typography>
-        <CTA cta={data.cta} />
+      <BoxedContainer>
+        <Stack
+          direction={media.md ? 'row' : 'column'}
+          justifyContent={media.md ? 'space-between' : 'center'}
+          alignItems={'center'}
+          spacing={4}
+        >
+          <Typography variant={'h2'} textAlign={'center'}>
+            {data.text}
+          </Typography>
+          <CTA cta={data.cta} />
+        </Stack>
       </BoxedContainer>
     </Container>
   )

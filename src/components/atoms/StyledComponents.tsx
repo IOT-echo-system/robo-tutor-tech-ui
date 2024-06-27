@@ -4,9 +4,13 @@ import LinkComponent from 'next/link'
 import {LoadingButton} from '@mui/lab'
 
 export const BoxedContainer = styled(Stack)(({theme}) => ({
-  padding: theme.spacing(0, 2),
+  margin: 'auto',
+  width: '95%',
+  [theme.breakpoints.up('sm')]: {
+    width: '90%'
+  },
   [theme.breakpoints.up('md')]: {
-    padding: theme.spacing(0, 8)
+    width: '80%'
   }
 }))
 
