@@ -1,7 +1,7 @@
 import React from 'react'
 import type {WidgetPropType} from './widget'
 import {Stack, styled, Typography} from '@mui/material'
-import type { CTAPropsType, ImageType} from '../atoms'
+import type {CTAPropsType, ImageType} from '../atoms'
 import {BoxedContainer, CTA} from '../atoms'
 import {PUBLIC_URL} from '../../config/cmsApiConfig'
 import {useMedia} from '../../hooks'
@@ -32,7 +32,6 @@ type HeroBannerPropsType = {
 
 export const HeroBanner: React.FC<WidgetPropType<HeroBannerPropsType>> = ({data}) => {
   const media = useMedia()
-  console.log(media)
   return (
     <Container src={PUBLIC_URL + data.image.data.attributes.formats.large.url}>
       <BoxedContainer spacing={2} width={media.md ? '60%' : '100%'} border={1}>

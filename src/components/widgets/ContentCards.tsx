@@ -1,7 +1,7 @@
 import React from 'react'
 import type {WidgetPropType} from './widget'
 import {Button, Card, CardActions, CardContent, CardMedia, Stack, styled, Typography} from '@mui/material'
-import type { ImageType} from '../atoms'
+import type {ImageType} from '../atoms'
 import {BoxedContainer} from '../atoms'
 import {useMedia} from '../../hooks'
 import {PUBLIC_URL} from '../../config/cmsApiConfig'

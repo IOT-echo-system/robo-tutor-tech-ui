@@ -27,6 +27,6 @@ export type ImageType = {
   }
 }
 
-export const Image: React.FC<{image: ImageType}> = ({image}) => {
+export const Image: React.FC<{image: ImageType}> = () => {
   return <></>
 }

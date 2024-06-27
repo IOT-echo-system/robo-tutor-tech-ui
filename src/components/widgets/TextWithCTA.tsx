@@ -1,6 +1,7 @@
 import React from 'react'
 import type {WidgetPropType} from './widget'
-import {BoxedContainer, CTA, CTAPropsType} from '../atoms'
+import type {CTAPropsType} from '../atoms'
+import {BoxedContainer, CTA} from '../atoms'
 import {Stack, styled, Typography} from '@mui/material'
 import {useMedia} from '../../hooks'
 
