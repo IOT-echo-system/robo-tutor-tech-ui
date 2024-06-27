@@ -1,8 +1,10 @@
 import React from 'react'
 import type {WidgetPropType} from './widget'
 import {Button, Card, CardActions, CardContent, CardMedia, Stack, styled, Typography} from '@mui/material'
+import type { ImageType} from '../atoms'
 import {BoxedContainer} from '../atoms'
 import {useMedia} from '../../hooks'
+import {PUBLIC_URL} from '../../config/cmsApiConfig'
 
 const Container = styled(Stack)(({theme}) => ({
   justifyContent: 'center',
@@ -19,11 +21,11 @@ const Container = styled(Stack)(({theme}) => ({
 }))
 
 type ContentCardsPropsType = {
-  title: string
+  heading: string
   cards: Array<{
     title: string
-    image: {src: string; alt: string}
-    content: string
+    image: ImageType
+    description: string
     ctaText?: string
     ctaLink?: string
   }>
@@ -40,7 +42,7 @@ export const ContentCards: React.FC<WidgetPropType<ContentCardsPropsType>> = ({d
     <Container>
       <BoxedContainer justifyContent={'center'} alignItems={'center'}>
         <Typography variant={'h2'} textAlign={'center'}>
-          {data.title}
+          {data.heading}
         </Typography>
         <Stack direction={media.md ? 'row' : 'column'} flexWrap={'wrap'}>
           {data.cards.map((card, index) => {
@@ -51,16 +53,16 @@ export const ContentCards: React.FC<WidgetPropType<ContentCardsPropsType>> = ({d
               >
                 <CardMedia
                   component="img"
-                  alt={card.image.alt}
+                  alt={card.title}
                   height={media.md ? '220' : '180'}
-                  image={card.image.src}
+                  image={PUBLIC_URL + card.image.data.attributes.formats.small.url}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
                     {card.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {card.content}
+                    {card.description}
                   </Typography>
                 </CardContent>
                 {card.ctaLink && card.ctaText && (

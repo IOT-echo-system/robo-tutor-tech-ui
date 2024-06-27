@@ -8,17 +8,19 @@ import {Layout} from '../components/organisms'
 import React from 'react'
 import {CMSService} from '../services'
 import type {SiteStateType} from '../store/reducers/site'
+import {useRouter} from 'next/router'
 
 interface MyAppProps extends AppProps {
   site: SiteStateType
 }
 
 const MyApp = ({Component, pageProps, site}: MyAppProps): React.JSX.Element => {
+  const router = useRouter()
   return (
     <StoreProvider>
       <ThemeProvider theme={theme}>
         <Layout site={site}>
-          <Component {...pageProps} />
+          <Component {...pageProps} key={router.asPath} />
         </Layout>
       </ThemeProvider>
     </StoreProvider>

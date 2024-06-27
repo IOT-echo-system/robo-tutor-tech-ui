@@ -1,33 +1,31 @@
 import type {GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage} from 'next'
-import {pageList} from '../../data/pageList'
-import type {PageContent} from '../components/templates'
 import {PageTemplate} from '../components/templates'
-import {pages} from '../../data/pages'
 import {useRouter} from 'next/router'
-import {siteDetails} from '../../data/siteDetails'
-import type {SiteMetaData} from '../components/atoms'
+import {CMSService} from '../services'
+import type {PageDetails} from '../services/typing/CMSService'
 
-type PagePropsType = {pageContent: PageContent; siteMetaData: SiteMetaData}
+type PagePropsType = {pageDetails: PageDetails}
 
-const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({pageContent, siteMetaData}) => {
+const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({pageDetails}) => {
   const router = useRouter()
   if (router.isFallback) {
     return <>Loader</>
   }
 
-  return <PageTemplate pageContent={pageContent} siteMetaData={siteMetaData} />
+  return <PageTemplate pageDetails={pageDetails} />
 }
 
-export const getStaticProps: GetStaticProps<PagePropsType> = ({params}) => {
-  const pageContent = pages[params?.page as keyof typeof pages] as PageContent | undefined
-  const metaData: SiteMetaData = siteDetails.metadata
-  if (!pageList.includes(`/${params?.page}`) && !pageContent) {
-    return {notFound: true}
+export const getStaticProps: GetStaticProps<PagePropsType> = async ({params}) => {
+  const pageResponse = await CMSService.getPageContent(params?.page as string)
+  if (!pageResponse) {
+    return getStaticProps({params: {page: 'not-found'}})
   }
-  return {props: {pageContent: pageContent!, siteMetaData: metaData}, revalidate: 84600}
+  return {props: {pageDetails: pageResponse}, revalidate: 84600}
 }
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const pageListResponse = await CMSService.getPageList()
+  const pageList = pageListResponse.map(page => `/${page.slug}`)
   return {paths: pageList, fallback: true}
 }
 

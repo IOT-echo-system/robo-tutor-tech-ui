@@ -26,15 +26,15 @@ export const Footer: React.FC = () => {
   return (
     <Container spacing={media.md ? 4 : 0} p={media.md ? 4 : 0}>
       <Stack direction={media.md ? 'row' : 'column'} justifyContent={'space-evenly'}>
-        {sections.map(({title, navLinks}) => {
+        {sections.map(({title, navLinks}, index) => {
           return (
-            <MenuContainer spacing={1} key={title}>
+            <MenuContainer spacing={1} key={`${title}-${index}`}>
               <Typography variant={'body1'}>
                 <strong>{title}</strong>
               </Typography>
               <Stack spacing={2} pl={2}>
-                {navLinks.map(({link, label}) => (
-                  <MenuItem key={link} link={link} label={label} />
+                {navLinks.map(({link, label}, index) => (
+                  <MenuItem key={`${link}-${index}`} link={link} label={label} />
                 ))}
               </Stack>
             </MenuContainer>
@@ -50,13 +50,13 @@ export const Footer: React.FC = () => {
             </Typography>
           </Stack>
           <Stack direction={'row'} justifyContent={'center'} spacing={1}>
-            {social.socials.map(({link, icon, name}) => {
+            {social.socials.map(({link, icon, name}, index) => {
               const Icon = icons[icon as keyof typeof icons] as SvgIconComponent | undefined
               if (!Icon) {
                 return <></>
               }
               return (
-                <Link href={link} key={link} aria-label={name}>
+                <Link href={link} key={`${link}-${index}`} aria-label={name}>
                   <Icon fontSize={'medium'} />
                 </Link>
               )

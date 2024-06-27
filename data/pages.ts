@@ -1,6 +1,4 @@
-import type {PageContent} from '../src/components/templates'
-
-export const pages: Record<string, PageContent> = {
+export const pages = {
   home: {
     seoDetails: {
       keywords: [

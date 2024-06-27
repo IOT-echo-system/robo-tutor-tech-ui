@@ -1,21 +1,24 @@
 import React from 'react'
 import {Stack} from '@mui/material'
+import type {PageDetails} from '../../services/typing/CMSService'
 import * as widgets from '../widgets'
-import type {Content} from '../widgets/widget'
-import type {SEODetailsType, SiteMetaData} from '../atoms'
-import {SEODetails} from '../atoms'
 
-export type PageContent = {contents: Content[]; seoDetails: SEODetailsType}
-
-type PageTemplatePropsType = {pageContent: PageContent; siteMetaData: SiteMetaData}
-export const PageTemplate: React.FC<PageTemplatePropsType> = ({pageContent, siteMetaData}) => {
-  const {contents} = pageContent
+type PageTemplatePropsType = {pageDetails: PageDetails}
+export const PageTemplate: React.FC<PageTemplatePropsType> = ({pageDetails}) => {
   return (
     <Stack>
-      <SEODetails details={pageContent.seoDetails} siteMetaData={siteMetaData} />
-      {contents.map((content, index) => {
+      {/*<SEODetails details={pageDetails.seoDetails} siteMetaData={siteMetaData} />*/}
+      {pageDetails.header.map((content, index) => {
         const Component = widgets[content.widget as keyof typeof widgets]
-        return <Component key={`content_${index}`} styles={content.styles} data={content.data} />
+        return <Component key={`content_${index}`} data={content.data} />
+      })}
+      {pageDetails.mainContent.map((content, index) => {
+        const Component = widgets[content.widget as keyof typeof widgets]
+        return <Component key={`content_${index}`} data={content.data} />
+      })}
+      {pageDetails.ctaBanner.map((content, index) => {
+        const Component = widgets[content.widget as keyof typeof widgets]
+        return <Component key={`content_${index}`} data={content.data} />
       })}
     </Stack>
   )

@@ -1,13 +1,13 @@
 import React from 'react'
-import type {WidgetPropType} from './widget'
+import type {WidgetPropType, WidgetStyles} from './widget'
 import {WidgetContainer} from '../atoms'
 import type {RTEPropsType} from '../molecules'
 import {RTE} from '../molecules'
 
-export const TextContent: React.FC<WidgetPropType<RTEPropsType>> = ({styles, data}) => {
+export const TextContent: React.FC<WidgetPropType<RTEPropsType & WidgetStyles>> = ({data}) => {
   return (
-    <WidgetContainer styles={styles}>
-      <RTE content={data.content} />
+    <WidgetContainer styles={{width: data.width}}>
+      <RTE rte={data.rte} />
     </WidgetContainer>
   )
 }

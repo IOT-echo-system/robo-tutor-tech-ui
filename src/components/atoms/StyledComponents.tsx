@@ -21,5 +21,5 @@ export const Link = styled(LinkComponent)<LinkProps & {disableUnderline?: 'true'
 
 export const Button = styled(LoadingButton)(({theme}) => ({
   textTransform: 'initial',
-  padding: theme.spacing(1, 8)
+  padding: theme.spacing(1, 4)
 }))

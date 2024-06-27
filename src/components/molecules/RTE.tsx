@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {styled} from '@mui/material'
+import {remark} from 'remark'
+import remarkHtml from 'remark-html'
 
 const TextContainer = styled('div')(({theme}) => ({
   fontSize: theme.spacing(2.5),
@@ -22,13 +24,27 @@ const TextContainer = styled('div')(({theme}) => ({
   '& a': {
     color: theme.palette.primary.main
   },
+  '& ul': {
+    marginLeft: theme.spacing(2)
+  },
+
   [theme.breakpoints.up('md')]: {
     margin: theme.spacing(4)
   }
 }))
 
-export type RTEPropsType = {content: string}
+export type RTEPropsType = {rte: string}
 
-export const RTE: React.FC<RTEPropsType> = ({content}) => {
-  return <TextContainer dangerouslySetInnerHTML={{__html: content}} />
+export const RTE: React.FC<RTEPropsType> = ({rte}) => {
+  const [htmlContent, setHtmlContent] = useState('')
+
+  useEffect(() => {
+    const fetchMarkdown = async () => {
+      const html = await remark().use(remarkHtml).process(rte)
+      setHtmlContent(html.toString())
+    }
+    fetchMarkdown().then()
+  }, [])
+
+  return <TextContainer dangerouslySetInnerHTML={{__html: htmlContent}} />
 }

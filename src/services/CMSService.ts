@@ -1,7 +1,16 @@
 import WebClient from 'web-client-starter'
 import {cmsApiConfig} from '../config/cmsApiConfig'
 import type {FooterInfo, MenuLink, SiteInfo} from '../store/reducers/site'
-import type {FooterResponse, MainMenuResponse, SiteInfoResponse} from './typing/CMSService'
+import type {
+  FooterResponse,
+  MainMenuResponse,
+  PageDetailsResponse,
+  PageListResponse,
+  PageDetails,
+  PageSummaryResponse,
+  SiteInfoResponse
+} from './typing/CMSService'
+import {ComponentNameMap, CTABannerComponentNameMap, HeaderComponentNameMap} from '../components/widgets/widgets'
 
 class CMSService_ {
   private readonly config = cmsApiConfig
@@ -28,6 +37,35 @@ class CMSService_ {
       path: this.config.footer
     })
     return response.data.attributes
+  }
+
+  async getPageList(): Promise<PageSummaryResponse[]> {
+    const response = await WebClient.get<PageListResponse>({
+      baseUrl: this.config.baseUrl,
+      path: this.config.pageList
+    })
+    return response.data.map(data => data.attributes)
+  }
+
+  async getPageContent(slug: string): Promise<PageDetails | null> {
+    const response = await WebClient.get<PageDetailsResponse>({
+      baseUrl: this.config.baseUrl,
+      path: this.config.pageDetails,
+      uriVariables: {slug}
+    })
+    response.data[0]?.attributes?.ctaBanner.forEach(content => {
+      content.widget = CTABannerComponentNameMap[content.__component]
+      content.data = {...content}
+    })
+    response.data[0]?.attributes?.mainContent.forEach(content => {
+      content.widget = ComponentNameMap[content.__component]
+      content.data = {...content}
+    })
+    response.data[0]?.attributes?.header.forEach(content => {
+      content.widget = HeaderComponentNameMap[content.__component]
+      content.data = {...content}
+    })
+    return response.data[0]?.attributes ?? null
   }
 }
 

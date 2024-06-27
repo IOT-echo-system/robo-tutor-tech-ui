@@ -1,8 +1,7 @@
 import React from 'react'
 import type {WidgetPropType} from './widget'
-import {BoxedContainer} from '../atoms'
-import {Button, Stack, styled, Typography} from '@mui/material'
-import Link from 'next/link'
+import {BoxedContainer, CTA, CTAPropsType} from '../atoms'
+import {Stack, styled, Typography} from '@mui/material'
 import {useMedia} from '../../hooks'
 
 const Container = styled(Stack)(({theme}) => ({
@@ -32,7 +31,7 @@ const Container = styled(Stack)(({theme}) => ({
   }
 }))
 
-type TextWithCTADataType = {text: string; link: string; ctaText: string}
+type TextWithCTADataType = {text: string; cta: CTAPropsType}
 
 export const TextWithCTA: React.FC<WidgetPropType<TextWithCTADataType>> = ({data}) => {
   const media = useMedia()
@@ -47,11 +46,7 @@ export const TextWithCTA: React.FC<WidgetPropType<TextWithCTADataType>> = ({data
         <Typography variant={'h2'} textAlign={'center'}>
           {data.text}
         </Typography>
-        <Link href={data.link}>
-          <Button variant={'contained'} size={'large'}>
-            {data.ctaText}
-          </Button>
-        </Link>
+        <CTA cta={data.cta} />
       </BoxedContainer>
     </Container>
   )
