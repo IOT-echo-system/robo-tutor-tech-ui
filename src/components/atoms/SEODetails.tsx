@@ -1,11 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
+import type {ImageType} from './Image'
+import {useSelector} from '../../hooks'
+import {cmsApiConfig} from '../../config/cmsApiConfig'
 
 export type SEODetailsType = {
-  keywords: string[]
-  description: string
-  title: string
-  metaImage: string
+  metaTitle: string
+  metaDescription: string
+  keywords: string
+  hostname?: string
+  metaImage: ImageType
 }
 export type SiteMetaData = {
   title: string
@@ -15,9 +19,11 @@ export type SiteMetaData = {
   description: string
 }
 
-type SeoDetailsPropsType = {details: SEODetailsType; siteMetaData: SiteMetaData}
-export const SEODetails: React.FC<SeoDetailsPropsType> = ({details, siteMetaData}) => {
-  const title = `${details.title}${details.title ? ' | ' : ''}${siteMetaData.title}`
+type SeoDetailsPropsType = {seo?: SEODetailsType}
+export const SEODetails: React.FC<SeoDetailsPropsType> = ({seo}) => {
+  const {siteInfo} = useSelector(state => state.site)
+  const title = `${seo?.metaTitle ?? ''}${seo?.metaTitle ? ' | ' : ''}${siteInfo.seo?.metaTitle}`
+  const imageUrl = cmsApiConfig.assets + (seo?.metaImage.data.attributes.formats.thumbnail.url ?? siteInfo.seo?.metaImage.data.attributes.formats.thumbnail.url)
 
   return (
     <Head>
@@ -29,21 +35,21 @@ export const SEODetails: React.FC<SeoDetailsPropsType> = ({details, siteMetaData
       <meta content="basic-page" name="template" />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta content="index,follow" name="robots" />
-      <meta content={details.description || siteMetaData.description} name="description" />
+      <meta content={seo?.metaDescription ?? siteInfo.seo?.metaDescription} name="description" />
       <meta content={title} itemProp="name" />
-      <meta content={details.description || siteMetaData.description} itemProp="description" />
-      <meta content={details.metaImage || siteMetaData.metaImage} itemProp="image" />
-      <meta content={details.metaImage || siteMetaData.metaImage} property="og:image" />
+      <meta content={seo?.metaDescription ?? siteInfo.seo?.metaDescription} itemProp="description" />
+      <meta content={imageUrl} itemProp="image" />
+      <meta content={imageUrl} property="og:image" />
       <meta content={title} property="og:title" />
-      <meta content={details.description || siteMetaData.description} property="og:description" />
-      <meta content={details.title || siteMetaData.title} property="og:site_name" />
-      <meta content={`https://${siteMetaData.hostname}`} property="og:url" />
-      <meta content={details.keywords.concat(siteMetaData.keywords).join(', ')} name="keywords" />
-      <meta content={details.keywords.concat(siteMetaData.keywords).join(', ')} name="news_keywords" />
+      <meta content={seo?.metaDescription ?? siteInfo.seo?.metaDescription} property="og:description" />
+      <meta content={seo?.metaTitle ?? siteInfo.seo?.metaTitle} property="og:site_name" />
+      <meta content={siteInfo.seo?.hostname} property="og:url" />
+      <meta content={seo?.keywords} name="keywords" />
+      <meta content={seo?.keywords} name="news_keywords" />
       <meta content="summary_large_image" name="twitter:card" />
       <meta content={title} name="twitter:title" />
-      <meta content={details.description || siteMetaData.description} name="twitter:description" />
-      <meta content={details.metaImage || siteMetaData.metaImage} name="twitter:image:src" />
+      <meta content={seo?.metaDescription ?? siteInfo.seo?.metaDescription} name="twitter:description" />
+      <meta content={imageUrl} name="twitter:image:src" />
       <title>{title}</title>
     </Head>
   )

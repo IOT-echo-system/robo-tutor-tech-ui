@@ -42,8 +42,8 @@ export const Menubar: React.FC = () => {
       )}
       {media.md ? (
         <Container>
-          {menus.map(({label, link}) => (
-            <MenuItem key={link} link={link} label={label} />
+          {menus.map(({label, link, newTab}) => (
+            <MenuItem key={link} link={link} label={label} newTab={newTab} />
           ))}
         </Container>
       ) : (
@@ -54,8 +54,8 @@ export const Menubar: React.FC = () => {
                 <Close />
               </IconButton>
             </Stack>
-            {menus.map(({label, link}) => (
-              <MenuItem key={link} link={link} label={label} />
+            {menus.map(({label, link, newTab}) => (
+              <MenuItem key={link} link={link} label={label} newTab={newTab} />
             ))}
           </MobileMenuContainer>
         </Drawer>

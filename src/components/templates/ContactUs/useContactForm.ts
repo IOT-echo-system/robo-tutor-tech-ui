@@ -1,10 +1,17 @@
-import type React from 'react'
+import React from 'react'
 import {useState} from 'react'
 import type {TextFieldProps} from '@mui/material'
 import {useForm} from '../../../hooks'
-import WebClient from 'web-client-starter/lib'
+import {CMSService} from '../../../services'
 
-type ContactFormValuesType = {name: string; email: string; subject: string; message: string; consent: boolean}
+export type ContactFormValuesType = {
+  name: string;
+  email: string;
+  subject: string;
+  phone: string,
+  message: string;
+  consent: boolean
+}
 type UseContactFormType = () => {
   handleSubmit: () => void
   submitted: boolean
@@ -13,16 +20,18 @@ type UseContactFormType = () => {
   values: ContactFormValuesType
   responseMessage: string
   error: boolean
-  fields: TextFieldProps[]
+  fields: TextFieldProps[],
+  validationError: boolean
 }
 
 export const useContactForm: UseContactFormType = () => {
-  const initialValue: ContactFormValuesType = {name: '', email: '', subject: '', message: '', consent: false}
+  const initialValue: ContactFormValuesType = {name: '', email: '', subject: '', phone: '', message: '', consent: false}
   const {values, onChange, onSubmit} = useForm(initialValue)
   const [submitted, setSubmitted] = useState(false)
   const [responseMessage, setResponseMessage] = useState('')
   const [error, setError] = useState(false)
 
+  const errorOnPhone = values.phone.length === 0 ? false : (values.phone.length !== 10 || isNaN(Number(values.phone)))
   const fields: TextFieldProps[] = [
     {
       label: 'Full name',
@@ -40,6 +49,16 @@ export const useContactForm: UseContactFormType = () => {
       onChange: event => {
         onChange('email', event.target.value)
       }
+    },
+    {
+      label: 'Phone',
+      required: true,
+      value: values.phone,
+      onChange: event => {
+        onChange('phone', event.target.value)
+      },
+      helperText: errorOnPhone ? 'Enter valid phone number' : '',
+      error: errorOnPhone
     },
     {
       label: 'Subject',
@@ -63,11 +82,7 @@ export const useContactForm: UseContactFormType = () => {
   const handleSubmit = () => {
     setError(false)
     setResponseMessage('')
-    WebClient.post({
-      baseUrl: '/api',
-      path: '/contact',
-      body: values
-    })
+    CMSService.contact(values)
       .then(() => {
         setSubmitted(true)
         setResponseMessage('Thank you contacting us! Our team will reach out to you soon.')
@@ -77,5 +92,14 @@ export const useContactForm: UseContactFormType = () => {
         setResponseMessage('Something went wrong, please try again!')
       })
   }
-  return {handleSubmit, responseMessage, error, onSubmit, submitted, fields, values, onChange}
+  return {
+    handleSubmit,
+    responseMessage,
+    error,
+    onSubmit,
+    submitted,
+    fields,
+    values,
+    onChange, validationError: errorOnPhone || !values.consent
+  }
 }

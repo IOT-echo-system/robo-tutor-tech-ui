@@ -2,7 +2,7 @@ import React from 'react'
 import {Stack, Typography} from '@mui/material'
 import {Link} from '../atoms'
 
-export type LocationProps = {
+export type LocationPropsType = {
   companyName: string
   address1: string
   address2: string
@@ -10,9 +10,9 @@ export type LocationProps = {
   address4?: string
   phone: string
   email: string
-  map: string
+  mapLink: string
 }
-export const Location: React.FC<LocationProps> = location => {
+export const Location: React.FC<LocationPropsType> = location => {
   return (
     <Stack spacing={2} justifyContent={'start'}>
       <Typography variant={'h4'} component={'div'}>
@@ -40,7 +40,7 @@ export const Location: React.FC<LocationProps> = location => {
         </Typography>
         <Link href={`mailto:${location.email}`}>{location.email}</Link>
       </Stack>
-      <Typography variant={'h5'} component={Link} href={location.map} target={'_blank'}>
+      <Typography variant={'h5'} component={Link} href={location.mapLink} target={'_blank'}>
         View map
       </Typography>
     </Stack>

@@ -1,10 +1,11 @@
 import type {TRootActions} from '../../typing/store'
+import type {SEODetailsType} from '../../components/atoms'
 
 export const SiteAction = {
   SITE_UPDATE_STATE: 'SITE_UPDATE_STATE'
 } as const
 
-export type SiteInfo = {title: string; subtitle?: string}
+export type SiteInfo = {title: string; subtitle?: string, seo?: SEODetailsType}
 export type MenuLink = {link: string; label: string; newTab: boolean}
 export type Section = {title: string; navLinks: MenuLink[]}
 export type Social = {icon: string; link: string; name: string}
@@ -26,7 +27,10 @@ export const initSiteState: SiteStateType = {
     social: {socials: [], title: ''}
   },
   header: {menus: []},
-  siteInfo: {title: '', subtitle: ''}
+  siteInfo: {
+    title: '',
+    subtitle: ''
+  }
 }
 
 const siteReducer = (state: SiteStateType, action: TRootActions): SiteStateType => {

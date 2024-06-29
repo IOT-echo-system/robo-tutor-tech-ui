@@ -8,9 +8,11 @@ import type {
   PageListResponse,
   PageDetails,
   PageSummaryResponse,
-  SiteInfoResponse
+  SiteInfoResponse, OfficeLocationResponse
 } from './typing/CMSService'
 import {ComponentNameMap, CTABannerComponentNameMap, HeaderComponentNameMap} from '../components/widgets/widgets'
+import {LocationPropsType} from '../components/molecules'
+import {ContactFormValuesType} from '../components/templates/ContactUs/useContactForm'
 
 class CMSService_ {
   private readonly config = cmsApiConfig
@@ -45,6 +47,22 @@ class CMSService_ {
       path: this.config.pageList
     })
     return response.data.map(data => data.attributes)
+  }
+
+  async getOfficeLocation(): Promise<LocationPropsType> {
+    const response = await WebClient.get<OfficeLocationResponse>({
+      baseUrl: this.config.baseUrl,
+      path: this.config.officeLocation
+    })
+    return response.data.attributes
+  }
+
+  async contact(values: ContactFormValuesType): Promise<string> {
+    return await WebClient.post<string>({
+      baseUrl: this.config.baseUrl,
+      path: this.config.contact,
+      body: {data: values}
+    })
   }
 
   async getPageContent(slug: string): Promise<PageDetails | null> {
