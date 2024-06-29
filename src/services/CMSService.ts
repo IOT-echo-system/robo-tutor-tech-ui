@@ -8,11 +8,12 @@ import type {
   PageListResponse,
   PageDetails,
   PageSummaryResponse,
-  SiteInfoResponse, OfficeLocationResponse
+  SiteInfoResponse,
+  OfficeLocationResponse
 } from './typing/CMSService'
 import {ComponentNameMap, CTABannerComponentNameMap, HeaderComponentNameMap} from '../components/widgets/widgets'
-import {LocationPropsType} from '../components/molecules'
-import {ContactFormValuesType} from '../components/templates/ContactUs/useContactForm'
+import type {LocationPropsType} from '../components/molecules'
+import type {ContactFormValuesType} from '../components/templates/ContactUs/useContactForm'
 
 class CMSService_ {
   private readonly config = cmsApiConfig

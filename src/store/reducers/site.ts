@@ -5,7 +5,7 @@ export const SiteAction = {
   SITE_UPDATE_STATE: 'SITE_UPDATE_STATE'
 } as const
 
-export type SiteInfo = {title: string; subtitle?: string, seo?: SEODetailsType}
+export type SiteInfo = {title: string; subtitle?: string; seo?: SEODetailsType}
 export type MenuLink = {link: string; label: string; newTab: boolean}
 export type Section = {title: string; navLinks: MenuLink[]}
 export type Social = {icon: string; link: string; name: string}

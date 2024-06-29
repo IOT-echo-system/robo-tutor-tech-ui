@@ -1,15 +1,15 @@
-import React from 'react'
+import type React from 'react'
 import {useState} from 'react'
 import type {TextFieldProps} from '@mui/material'
 import {useForm} from '../../../hooks'
 import {CMSService} from '../../../services'
 
 export type ContactFormValuesType = {
-  name: string;
-  email: string;
-  subject: string;
-  phone: string,
-  message: string;
+  name: string
+  email: string
+  subject: string
+  phone: string
+  message: string
   consent: boolean
 }
 type UseContactFormType = () => {
@@ -20,7 +20,7 @@ type UseContactFormType = () => {
   values: ContactFormValuesType
   responseMessage: string
   error: boolean
-  fields: TextFieldProps[],
+  fields: TextFieldProps[]
   validationError: boolean
 }
 
@@ -31,7 +31,7 @@ export const useContactForm: UseContactFormType = () => {
   const [responseMessage, setResponseMessage] = useState('')
   const [error, setError] = useState(false)
 
-  const errorOnPhone = values.phone.length === 0 ? false : (values.phone.length !== 10 || isNaN(Number(values.phone)))
+  const errorOnPhone = values.phone.length === 0 ? false : values.phone.length !== 10 || isNaN(Number(values.phone))
   const fields: TextFieldProps[] = [
     {
       label: 'Full name',
@@ -100,6 +100,7 @@ export const useContactForm: UseContactFormType = () => {
     submitted,
     fields,
     values,
-    onChange, validationError: errorOnPhone || !values.consent
+    onChange,
+    validationError: errorOnPhone || !values.consent
   }
 }

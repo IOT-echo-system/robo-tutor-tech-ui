@@ -6,17 +6,8 @@ import {useContactForm} from './useContactForm'
 import {Button} from '../../atoms'
 
 export const ContactUs: React.FC = () => {
-  const {
-    handleSubmit,
-    responseMessage,
-    error,
-    onSubmit,
-    submitted,
-    fields,
-    values,
-    onChange,
-    validationError
-  } = useContactForm()
+  const {handleSubmit, responseMessage, error, onSubmit, submitted, fields, values, onChange, validationError} =
+    useContactForm()
 
   return (
     <Stack spacing={2}>
@@ -59,7 +50,9 @@ export const ContactUs: React.FC = () => {
             </Typography>
           </Stack>
           <Stack direction={'row'}>
-            <Button type={'submit'} variant={'contained'} disabled={validationError}>Submit</Button>
+            <Button type={'submit'} variant={'contained'} disabled={validationError}>
+              Submit
+            </Button>
           </Stack>
         </Stack>
       )}

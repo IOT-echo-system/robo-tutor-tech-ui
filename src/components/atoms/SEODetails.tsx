@@ -23,7 +23,10 @@ type SeoDetailsPropsType = {seo?: SEODetailsType}
 export const SEODetails: React.FC<SeoDetailsPropsType> = ({seo}) => {
   const {siteInfo} = useSelector(state => state.site)
   const title = `${seo?.metaTitle ?? ''}${seo?.metaTitle ? ' | ' : ''}${siteInfo.seo?.metaTitle}`
-  const imageUrl = cmsApiConfig.assets + (seo?.metaImage.data.attributes.formats.thumbnail.url ?? siteInfo.seo?.metaImage.data.attributes.formats.thumbnail.url)
+  const imageUrl =
+    cmsApiConfig.assets +
+    (seo?.metaImage.data.attributes.formats.thumbnail.url ??
+      siteInfo.seo?.metaImage.data.attributes.formats.thumbnail.url)
 
   return (
     <Head>
