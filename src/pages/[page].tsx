@@ -24,9 +24,13 @@ export const getStaticProps: GetStaticProps<PagePropsType> = async ({params}) =>
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const pageListResponse = await CMSService.getPageList()
-  const pageList = pageListResponse.map(page => `/${page.slug}`)
-  return {paths: pageList, fallback: true}
+  try {
+    const pageListResponse = await CMSService.getPageList()
+    const pageList = pageListResponse.map(page => `/${page.slug}`)
+    return {paths: pageList, fallback: true}
+  } catch (error) {
+    return {paths: [], fallback: true}
+  }
 }
 
 export default Page

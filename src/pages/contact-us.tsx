@@ -28,8 +28,12 @@ const ContactUsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = 
 }
 
 export const getStaticProps: GetStaticProps<LocationPropsType> = async () => {
-  const location = await CMSService.getOfficeLocation()
-  return {props: location, revalidate: 84600}
+  try {
+    const location = await CMSService.getOfficeLocation()
+    return {props: location, revalidate: 84600}
+  } catch (error) {
+    return {props: {companyName: '', address1: '', address2: '', phone: '', email: '', mapLink: ''}, revalidate: 120}
+  }
 }
 
 export default ContactUsPage

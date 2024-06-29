@@ -3,16 +3,25 @@ import {CMSService} from '../services'
 import type {PageDetails} from '../services/typing/CMSService'
 import Page from './[page]'
 
-type PagePropsType = {pageDetails: PageDetails}
+type PagePropsType = {pageDetails?: PageDetails}
 
-const HomePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = Page
+const HomePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = props => {
+  if (!props.pageDetails) {
+    return <></>
+  }
+  return <Page pageDetails={props.pageDetails} />
+}
 
 export const getStaticProps: GetStaticProps<PagePropsType> = async () => {
-  const pageResponse = await CMSService.getPageContent('index')
-  if (!pageResponse) {
-    return getStaticProps({params: {page: 'not-found'}})
+  try {
+    const pageResponse = await CMSService.getPageContent('index')
+    if (!pageResponse) {
+      return getStaticProps({params: {page: 'not-found'}})
+    }
+    return {props: {pageDetails: pageResponse}, revalidate: 84600}
+  } catch (error) {
+    return {props: {}, revalidate: 120}
   }
-  return {props: {pageDetails: pageResponse}, revalidate: 84600}
 }
 
 export default HomePage
