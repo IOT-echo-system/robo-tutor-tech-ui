@@ -1,6 +1,8 @@
+// eslint-disable-next-line no-process-env
+const API_BASE_URL = process.env.API_BASE_URL ?? ''
 export const cmsApiConfig = {
-  baseUrl: '/api',
-  assets: '/assets',
+  baseUrl: `${API_BASE_URL}/api`,
+  assets: `${API_BASE_URL}/assets`,
   siteInfo: '/site-info?populate[seo][populate][0]=metaImage',
   mainMenu: '/main-menu?populate=navLink',
   footer: '/footer?populate=sections.navLinks,social.socials',
