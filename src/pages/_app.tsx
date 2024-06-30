@@ -11,7 +11,7 @@ import type {SiteStateType} from '../store/reducers/site'
 import {useRouter} from 'next/router'
 
 interface MyAppProps extends AppProps {
-  site: SiteStateType
+  site?: SiteStateType
 }
 
 const MyApp = ({Component, pageProps, site}: MyAppProps): React.JSX.Element => {

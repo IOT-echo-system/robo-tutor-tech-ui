@@ -3,24 +3,29 @@ import {PageTemplate} from '../components/templates'
 import {useRouter} from 'next/router'
 import {CMSService} from '../services'
 import type {PageDetails} from '../services/typing/CMSService'
+import {Loader} from '../components/atoms'
 
-type PagePropsType = {pageDetails: PageDetails}
+type PagePropsType = {pageDetails?: PageDetails}
 
 const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({pageDetails}) => {
   const router = useRouter()
-  if (router.isFallback) {
-    return <>Loader</>
+  if (router.isFallback || !pageDetails) {
+    return <Loader />
   }
 
   return <PageTemplate pageDetails={pageDetails} />
 }
 
 export const getStaticProps: GetStaticProps<PagePropsType> = async ({params}) => {
-  const pageResponse = await CMSService.getPageContent(params?.page as string)
-  if (!pageResponse) {
-    return getStaticProps({params: {page: 'not-found'}})
+  try {
+    const pageResponse = await CMSService.getPageContent(params?.page as string)
+    if (!pageResponse) {
+      return getStaticProps({params: {page: 'not-found'}})
+    }
+    return {props: {pageDetails: pageResponse}, revalidate: 84600}
+  } catch (error) {
+    return {props: {}, revalidate: 120}
   }
-  return {props: {pageDetails: pageResponse}, revalidate: 84600}
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

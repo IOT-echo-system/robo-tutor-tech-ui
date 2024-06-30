@@ -12,13 +12,19 @@ const Container = styled(Stack)(() => ({
   minHeight: '100vh'
 }))
 
-export const Layout: React.FC<PropsWithChildren<{site: SiteStateType}>> = ({children, site}) => {
+export const Layout: React.FC<PropsWithChildren<{site?: SiteStateType}>> = ({children, site}) => {
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(updateSite(site))
-  }, [])
+    if (site) {
+      dispatch(updateSite(site))
+    }
+  }, [site])
 
   const media = useMedia()
+
+  if (!site) {
+    return <div>Loader</div>
+  }
 
   return (
     <Container justifyContent={'space-between'}>
