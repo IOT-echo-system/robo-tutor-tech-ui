@@ -29,11 +29,11 @@ export const SEODetails: React.FC<SeoDetailsPropsType> = ({seo, site}) => {
   }, [site])
 
   const siteInfo = site.siteInfo
-  const title = `${seo?.metaTitle ?? ''}${seo?.metaTitle ? ' | ' : ''}${siteInfo.seo?.metaTitle}`
+  const title = `${seo?.metaTitle ?? ''}${seo?.metaTitle ? ' | ' : ''}${siteInfo.seo.metaTitle}`
   const imageUrl =
     apiConfig.assets +
     (seo?.metaImage.data.attributes.formats.thumbnail.url ??
-      siteInfo.seo?.metaImage.data.attributes.formats.thumbnail.url)
+      siteInfo.seo.metaImage.data.attributes.formats.thumbnail.url)
 
   return (
     <Head>
@@ -45,20 +45,20 @@ export const SEODetails: React.FC<SeoDetailsPropsType> = ({seo, site}) => {
       <meta content="basic-page" name="template" />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta content="index,follow" name="robots" />
-      <meta content={seo?.metaDescription ?? siteInfo.seo?.metaDescription} name="description" />
+      <meta content={seo?.metaDescription ?? siteInfo.seo.metaDescription} name="description" />
       <meta content={title} itemProp="name" />
-      <meta content={seo?.metaDescription ?? siteInfo.seo?.metaDescription} itemProp="description" />
+      <meta content={seo?.metaDescription ?? siteInfo.seo.metaDescription} itemProp="description" />
       <meta content={imageUrl} itemProp="image" />
       <meta content={imageUrl} property="og:image" />
       <meta content={title} property="og:title" />
-      <meta content={seo?.metaDescription ?? siteInfo.seo?.metaDescription} property="og:description" />
-      <meta content={seo?.metaTitle ?? siteInfo.seo?.metaTitle} property="og:site_name" />
-      <meta content={siteInfo.seo?.hostname} property="og:url" />
+      <meta content={seo?.metaDescription ?? siteInfo.seo.metaDescription} property="og:description" />
+      <meta content={seo?.metaTitle ?? siteInfo.seo.metaTitle} property="og:site_name" />
+      <meta content={siteInfo.seo.hostname} property="og:url" />
       <meta content={seo?.keywords} name="keywords" />
       <meta content={seo?.keywords} name="news_keywords" />
       <meta content="summary_large_image" name="twitter:card" />
       <meta content={title} name="twitter:title" />
-      <meta content={seo?.metaDescription ?? siteInfo.seo?.metaDescription} name="twitter:description" />
+      <meta content={seo?.metaDescription ?? siteInfo.seo.metaDescription} name="twitter:description" />
       <meta content={imageUrl} name="twitter:image:src" />
       <title>{title}</title>
     </Head>

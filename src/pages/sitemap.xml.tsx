@@ -9,7 +9,7 @@ const generateSiteMap = async (): Promise<string> => {
   const pageList = await CMSService.getPageList()
   const urls = pageList.map(page => {
     return `<url>
-                <loc>${site.seo?.hostname ?? ''}/${page.slug}</loc>
+                <loc>${site.seo.hostname ?? ''}/${page.slug}</loc>
                 <lastmod>${formatDate(new Date(page.updatedAt), 'YYYY-MM-DD')}</lastmod>
             </url>`
   })
