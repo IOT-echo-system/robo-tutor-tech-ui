@@ -1,7 +1,5 @@
-// eslint-disable-next-line no-process-env
-const API_BASE_URL = process.env.API_BASE_URL ?? ''
 export const cmsApiConfig = {
-  baseUrl: `${API_BASE_URL}/api`,
+  baseUrl: 'https://www.robotutortech.com/api',
   assets: 'https://iot-echo-system.github.io/assets',
   siteInfo: '/site-info?populate[seo][populate][0]=metaImage',
   mainMenu: '/main-menu?populate=navLink',
