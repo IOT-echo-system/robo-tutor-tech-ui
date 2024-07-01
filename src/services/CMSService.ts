@@ -91,7 +91,10 @@ class CMSService_ {
       content.widget = HeaderComponentNameMap[content.__component]
       content.data = {...content}
     })
-    return response.data[0]?.attributes
+    if (response.data.length === 0) {
+      throw new Error('Data not found')
+    }
+    return response.data[0].attributes
   }
 }
 

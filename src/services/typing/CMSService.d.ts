@@ -7,10 +7,9 @@ export type SiteInfoResponse = {data: {attributes: SiteInfo}}
 export type MainMenuResponse = {data: {attributes: {navLink: MenuLink[]}}}
 export type FooterResponse = {data: {attributes: FooterInfo}}
 export type OfficeLocationResponse = {data: {attributes: LocationPropsType}}
-export type PageSummaryResponse = {title: string; slug: string}
+export type PageSummaryResponse = {slug: string; updatedAt: Date}
 export type PageListResponse = {data: Array<{attributes: PageSummaryResponse}>}
 export type PageDetails = {
-  title: string
   slug: string
   header: ContentHeader[]
   mainContent: Content[]
