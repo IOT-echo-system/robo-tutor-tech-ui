@@ -1,5 +1,5 @@
 import WebClient from 'web-client-starter'
-import {cmsApiConfig} from '../config/cmsApiConfig'
+import {apiConfig} from '../config/apiConfig'
 import type {FooterInfo, MenuLink, SiteInfo, SiteStateType} from '../store/reducers/site'
 import type {
   FooterResponse,
@@ -16,7 +16,7 @@ import type {LocationPropsType} from '../components/molecules'
 import type {ContactFormValuesType} from '../components/templates/ContactUs/useContactForm'
 
 class CMSService_ {
-  private readonly config = cmsApiConfig
+  private readonly config = apiConfig
 
   async getSiteInfoWithHeaderAndFooter(): Promise<SiteStateType> {
     const siteInfo = await this.getSiteInfo()

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import Head from 'next/head'
 import type {ImageType} from './Image'
 import {useDispatch} from '../../hooks'
-import {cmsApiConfig} from '../../config/cmsApiConfig'
+import {apiConfig} from '../../config/apiConfig'
 import type {SiteStateType} from '../../store/reducers/site'
 import {updateSite} from '../../store/actions/site'
 
@@ -31,7 +31,7 @@ export const SEODetails: React.FC<SeoDetailsPropsType> = ({seo, site}) => {
   const siteInfo = site.siteInfo
   const title = `${seo?.metaTitle ?? ''}${seo?.metaTitle ? ' | ' : ''}${siteInfo.seo?.metaTitle}`
   const imageUrl =
-    cmsApiConfig.assets +
+    apiConfig.assets +
     (seo?.metaImage.data.attributes.formats.thumbnail.url ??
       siteInfo.seo?.metaImage.data.attributes.formats.thumbnail.url)
 

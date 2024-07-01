@@ -162,6 +162,12 @@ module.exports = {
         '@typescript-eslint/restrict-template-expressions': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off'
       }
+    },
+    {
+      files: ['src/config/apiConfig.ts'],
+      rules: {
+        'no-process-env': 'off',
+      }
     }
   ]
 }

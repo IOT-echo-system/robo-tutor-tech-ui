@@ -3,7 +3,7 @@ import type {WidgetPropType} from './widget'
 import {Stack, styled, Typography} from '@mui/material'
 import type {CTAPropsType, ImageType} from '../atoms'
 import {BoxedContainer, CTA} from '../atoms'
-import {cmsApiConfig} from '../../config/cmsApiConfig'
+import {apiConfig} from '../../config/apiConfig'
 import {useMedia} from '../../hooks'
 
 const Container = styled(Stack)<{src: string}>(({theme, src}) => ({
@@ -34,7 +34,7 @@ type HeroBannerPropsType = {
 export const HeroBanner: React.FC<WidgetPropType<HeroBannerPropsType>> = ({data}) => {
   const media = useMedia()
   return (
-    <Container src={cmsApiConfig.assets + data.image.data.attributes.formats.large.url}>
+    <Container src={apiConfig.assets + data.image.data.attributes.formats.large.url}>
       <BoxedContainer>
         <Stack spacing={2} width={media.md ? '60%' : '100%'}>
           <Typography variant={media.md ? 'h1' : 'h3'} component={'h1'} color={data.darkText ? 'black' : 'white'}>

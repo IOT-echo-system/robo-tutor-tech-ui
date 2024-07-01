@@ -4,7 +4,7 @@ import {Button, Card, CardActions, CardContent, CardMedia, Stack, styled, Typogr
 import type {ImageType} from '../atoms'
 import {BoxedContainer} from '../atoms'
 import {useMedia} from '../../hooks'
-import {cmsApiConfig} from '../../config/cmsApiConfig'
+import {apiConfig} from '../../config/apiConfig'
 
 const Container = styled(Stack)(({theme}) => ({
   justifyContent: 'center',
@@ -53,7 +53,7 @@ export const ContentCards: React.FC<WidgetPropType<ContentCardsPropsType>> = ({d
                   component="img"
                   alt={card.title}
                   height={media.md ? '220' : '180'}
-                  image={cmsApiConfig.assets + card.image.data.attributes.formats.small.url}
+                  image={apiConfig.assets + card.image.data.attributes.formats.small.url}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
