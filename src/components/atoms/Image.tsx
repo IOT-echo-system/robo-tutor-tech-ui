@@ -21,8 +21,8 @@ export type ImageType = {
       formats: {[P in 'large' | 'small' | 'medium' | 'thumbnail']: ImageFormat}
       previewUrl: string | null
       provider: string
-      createdAt: Date
-      updatedAt: Date
+      createdAt: string
+      updatedAt: string
     } & ImageFormat
   }
 }

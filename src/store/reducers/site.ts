@@ -52,8 +52,8 @@ export const initSiteState: SiteStateType = {
             caption: '',
             previewUrl: '',
             provider: '',
-            createdAt: new Date(),
-            updatedAt: new Date()
+            createdAt: new Date().toString(),
+            updatedAt: new Date().toString()
           }
         }
       }
