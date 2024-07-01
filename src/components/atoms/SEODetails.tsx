@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Head from 'next/head'
 import type {ImageType} from './Image'
-import {useSelector} from '../../hooks'
+import {useDispatch} from '../../hooks'
 import {cmsApiConfig} from '../../config/cmsApiConfig'
+import type {SiteStateType} from '../../store/reducers/site'
+import {updateSite} from '../../store/actions/site'
 
 export type SEODetailsType = {
   metaTitle: string
@@ -19,9 +21,14 @@ export type SiteMetaData = {
   description: string
 }
 
-type SeoDetailsPropsType = {seo?: SEODetailsType}
-export const SEODetails: React.FC<SeoDetailsPropsType> = ({seo}) => {
-  const {siteInfo} = useSelector(state => state.site)
+type SeoDetailsPropsType = {seo?: SEODetailsType; site: SiteStateType}
+export const SEODetails: React.FC<SeoDetailsPropsType> = ({seo, site}) => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(updateSite(site))
+  }, [site])
+
+  const siteInfo = site.siteInfo
   const title = `${seo?.metaTitle ?? ''}${seo?.metaTitle ? ' | ' : ''}${siteInfo.seo?.metaTitle}`
   const imageUrl =
     cmsApiConfig.assets +

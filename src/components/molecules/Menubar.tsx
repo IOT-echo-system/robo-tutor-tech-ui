@@ -55,7 +55,9 @@ export const Menubar: React.FC = () => {
               </IconButton>
             </Stack>
             {menus.map(({label, link, newTab}) => (
-              <MenuItem key={link} link={link} label={label} newTab={newTab} />
+              <Stack key={link} onClick={handleMobileMenu(false)}>
+                <MenuItem link={link} label={label} newTab={newTab} />
+              </Stack>
             ))}
           </MobileMenuContainer>
         </Drawer>

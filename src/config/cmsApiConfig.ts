@@ -1,5 +1,5 @@
 export const cmsApiConfig = {
-  baseUrl: 'https://www.robotutortech.com/api',
+  baseUrl: '/api',
   assets: 'https://iot-echo-system.github.io/assets',
   siteInfo: '/site-info?populate[seo][populate][0]=metaImage',
   mainMenu: '/main-menu?populate=navLink',

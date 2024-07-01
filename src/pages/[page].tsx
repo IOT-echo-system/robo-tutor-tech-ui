@@ -3,28 +3,33 @@ import {PageTemplate} from '../components/templates'
 import {useRouter} from 'next/router'
 import {CMSService} from '../services'
 import type {PageDetails} from '../services/typing/CMSService'
-import {Loader} from '../components/atoms'
+import {Loader, SEODetails} from '../components/atoms'
+import React from 'react'
+import type {SiteStateType} from '../store/reducers/site'
 
-type PagePropsType = {pageDetails?: PageDetails}
+export type PagePropsType = {pageDetails: PageDetails; site: SiteStateType}
 
-const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({pageDetails}) => {
+const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({pageDetails, site}) => {
   const router = useRouter()
-  if (router.isFallback || !pageDetails) {
+  if (router.isFallback) {
     return <Loader />
   }
 
-  return <PageTemplate pageDetails={pageDetails} />
+  return (
+    <>
+      <SEODetails site={site} seo={pageDetails.seo} />
+      <PageTemplate pageDetails={pageDetails} />
+    </>
+  )
 }
 
 export const getStaticProps: GetStaticProps<PagePropsType> = async ({params}) => {
   try {
-    const pageResponse = await CMSService.getPageContent(params?.page as string)
-    if (!pageResponse) {
-      return getStaticProps({params: {page: 'not-found'}})
-    }
-    return {props: {pageDetails: pageResponse}, revalidate: 84600}
+    const pageDetails = await CMSService.getPageContent(params?.page as string)
+    const site = await CMSService.getSiteInfoWithHeaderAndFooter()
+    return {props: {pageDetails, site}, revalidate: 84600}
   } catch (error) {
-    return {props: {}, revalidate: 120}
+    return {notFound: true}
   }
 }
 

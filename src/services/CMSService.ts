@@ -1,6 +1,6 @@
 import WebClient from 'web-client-starter'
 import {cmsApiConfig} from '../config/cmsApiConfig'
-import type {FooterInfo, MenuLink, SiteInfo} from '../store/reducers/site'
+import type {FooterInfo, MenuLink, SiteInfo, SiteStateType} from '../store/reducers/site'
 import type {
   FooterResponse,
   MainMenuResponse,
@@ -17,6 +17,13 @@ import type {ContactFormValuesType} from '../components/templates/ContactUs/useC
 
 class CMSService_ {
   private readonly config = cmsApiConfig
+
+  async getSiteInfoWithHeaderAndFooter(): Promise<SiteStateType> {
+    const siteInfo = await this.getSiteInfo()
+    const mainMenu = await this.getMainMenu()
+    const footer = await this.getFooter()
+    return {siteInfo, header: {menus: mainMenu}, footer}
+  }
 
   async getSiteInfo(): Promise<SiteInfo> {
     const response = await WebClient.get<SiteInfoResponse>({
@@ -66,7 +73,7 @@ class CMSService_ {
     })
   }
 
-  async getPageContent(slug: string): Promise<PageDetails | null> {
+  async getPageContent(slug: string): Promise<PageDetails> {
     const response = await WebClient.get<PageDetailsResponse>({
       baseUrl: this.config.baseUrl,
       path: this.config.pageDetails,
@@ -84,7 +91,7 @@ class CMSService_ {
       content.widget = HeaderComponentNameMap[content.__component]
       content.data = {...content}
     })
-    return response.data[0]?.attributes ?? null
+    return response.data[0]?.attributes
   }
 }
 
