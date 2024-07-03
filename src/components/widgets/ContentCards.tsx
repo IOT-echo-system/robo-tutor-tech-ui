@@ -53,7 +53,7 @@ export const ContentCards: React.FC<WidgetPropType<ContentCardsPropsType>> = ({d
                   component="img"
                   alt={card.title}
                   height={media.md ? '220' : '180'}
-                  image={apiConfig.assets + card.image.data.attributes.formats.small.url}
+                  image={apiConfig.assets + card.image.data?.attributes.formats.small.url}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">

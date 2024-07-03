@@ -24,7 +24,7 @@ export type ImageType = {
       createdAt: string
       updatedAt: string
     } & ImageFormat
-  }
+  } | null
 }
 
 export const Image: React.FC<{image: ImageType}> = () => {

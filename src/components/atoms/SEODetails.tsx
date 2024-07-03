@@ -32,8 +32,8 @@ export const SEODetails: React.FC<SeoDetailsPropsType> = ({seo, site}) => {
   const title = `${seo?.metaTitle ?? ''}${seo?.metaTitle ? ' | ' : ''}${siteInfo.seo.metaTitle}`
   const imageUrl =
     apiConfig.assets +
-    (seo?.metaImage.data.attributes.formats.thumbnail.url ??
-      siteInfo.seo.metaImage.data.attributes.formats.thumbnail.url)
+    (seo?.metaImage.data?.attributes.formats.thumbnail.url ??
+      siteInfo.seo.metaImage.data?.attributes.formats.thumbnail.url)
 
   return (
     <Head>

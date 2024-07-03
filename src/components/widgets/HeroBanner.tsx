@@ -34,7 +34,7 @@ type HeroBannerPropsType = {
 export const HeroBanner: React.FC<WidgetPropType<HeroBannerPropsType>> = ({data}) => {
   const media = useMedia()
   return (
-    <Container src={apiConfig.assets + data.image.data.attributes.formats.large.url}>
+    <Container src={apiConfig.assets + data.image.data?.attributes.formats.large.url}>
       <BoxedContainer>
         <Stack spacing={2} width={media.md ? '60%' : '100%'}>
           <Typography variant={media.md ? 'h1' : 'h3'} component={'h1'} color={data.darkText ? 'black' : 'white'}>
