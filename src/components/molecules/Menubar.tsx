@@ -35,12 +35,12 @@ export const Menubar: React.FC = () => {
 
   return (
     <>
-      {!media.md && (
+      {media.md && (
         <IconButton onClick={handleMobileMenu(true)} aria-label={'Menu'}>
           <Menu />
         </IconButton>
       )}
-      {media.md ? (
+      {!media.md ? (
         <Container>
           {menus.map(({label, link, newTab}) => (
             <MenuItem key={link} link={link} label={label} newTab={newTab} />

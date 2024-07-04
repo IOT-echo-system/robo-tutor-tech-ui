@@ -12,10 +12,10 @@ const Container = styled(Stack)(({theme}) => ({
   padding: theme.spacing(4, 0),
   alignItems: 'center',
   '& h2': {
-    fontSize: theme.spacing(4),
+    fontSize: theme.spacing(6),
     fontWeight: 500,
-    [theme.breakpoints.up('md')]: {
-      fontSize: theme.spacing(6)
+    [theme.breakpoints.down('md')]: {
+      fontSize: theme.spacing(4)
     }
   }
 }))
@@ -42,17 +42,17 @@ export const ContentCards: React.FC<WidgetPropType<ContentCardsPropsType>> = ({d
     <Container>
       <BoxedContainer spacing={2}>
         <Typography variant={'h2'}>{data.heading}</Typography>
-        <Stack direction={media.md ? 'row' : 'column'} flexWrap={'wrap'}>
+        <Stack direction={media.md ? 'column' : 'row'} flexWrap={'wrap'}>
           {data.cards.map((card, index) => {
             return (
               <Card
                 key={`card_${index}`}
-                sx={{margin: 2, minWidth: 320, width: media.md ? cardWidth : 'calc(100% - 32px)'}}
+                sx={{margin: 2, minWidth: 320, width: media.md ? 'calc(100% - 32px)' : cardWidth}}
               >
                 <CardMedia
                   component="img"
                   alt={card.title}
-                  height={media.md ? '220' : '180'}
+                  height={media.md ? '180' : '220'}
                   image={apiConfig.assets + card.image.data?.attributes.formats.small.url}
                 />
                 <CardContent>

@@ -6,26 +6,26 @@ import Link from 'next/link'
 
 const Container = styled(Stack)(({theme}) => ({
   background: theme.palette.common.white,
-  minHeight: theme.spacing(6),
   justifyContent: 'center',
   alignItems: 'center',
   boxShadow: theme.shadows[2],
   position: 'fixed',
   zIndex: 999,
   width: '100%',
-  [theme.breakpoints.up('md')]: {
-    minHeight: theme.spacing(8)
+  minHeight: theme.spacing(8),
+  [theme.breakpoints.down('md')]: {
+    minHeight: theme.spacing(6)
   }
 }))
 
 const SiteTitle = styled(Typography)(({theme}) => ({
-  fontSize: theme.spacing(2.5),
+  fontSize: theme.spacing(4),
   height: '100%',
   '&:hover': {
     textDecoration: 'none'
   },
-  [theme.breakpoints.up('md')]: {
-    fontSize: theme.spacing(4)
+  [theme.breakpoints.down('md')]: {
+    fontSize: theme.spacing(2.5)
   }
 }))
 

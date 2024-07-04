@@ -19,15 +19,15 @@ const Container = styled(Stack)(({theme}) => ({
     }
   },
   '& .MuiButton-root': {
-    fontSize: theme.spacing(2),
+    fontSize: theme.spacing(3),
     textTransform: 'initial',
     fontWeight: 500,
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.down('md')]: {
       padding: theme.spacing(1, 4),
-      fontSize: theme.spacing(2.5)
+      fontSize: theme.spacing(2)
     },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: theme.spacing(3)
+    [theme.breakpoints.down('lg')]: {
+      fontSize: theme.spacing(2.5)
     }
   }
 }))
@@ -40,8 +40,8 @@ export const TextWithCTA: React.FC<WidgetPropType<TextWithCTADataType>> = ({data
     <Container justifyContent={'center'}>
       <BoxedContainer>
         <Stack
-          direction={media.md ? 'row' : 'column'}
-          justifyContent={media.md ? 'space-between' : 'center'}
+          direction={media.md ? 'column' : 'row'}
+          justifyContent={media.md ? 'center' : 'space-between'}
           alignItems={'center'}
           spacing={4}
         >

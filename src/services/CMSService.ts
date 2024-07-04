@@ -14,6 +14,7 @@ import type {
 import {ComponentNameMap, CTABannerComponentNameMap, HeaderComponentNameMap} from '../components/widgets/widgets'
 import type {LocationPropsType} from '../components/molecules'
 import type {ContactFormValuesType} from '../components/templates/ContactUs/useContactForm'
+import type {TRootState} from '../typing/store'
 
 class CMSService_ {
   private readonly config = apiConfig
@@ -95,6 +96,10 @@ class CMSService_ {
       throw new Error('Data not found')
     }
     return response.data[0].attributes
+  }
+
+  async getInitialValue(): Promise<TRootState> {
+    return {site: await this.getSiteInfoWithHeaderAndFooter()}
   }
 }
 

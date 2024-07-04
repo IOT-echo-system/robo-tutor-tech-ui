@@ -14,6 +14,6 @@ export type PageDetails = {
   header: ContentHeader[]
   mainContent: Content[]
   ctaBanner: ContentCTABanner[]
-  seo?: SEODetailsType
+  seo: SEODetailsType | null
 }
 export type PageDetailsResponse = {data: Array<{attributes: PageDetails}>}

@@ -13,9 +13,8 @@ const Container = styled(Stack)(({theme}) => ({
 
 const MenuContainer = styled(Stack)(({theme}) => ({
   padding: theme.spacing(2, 2),
-  borderTop: `1px solid ${theme.palette.background.default}`,
-  [theme.breakpoints.up('md')]: {
-    border: 'unset'
+  [theme.breakpoints.down('md')]: {
+    borderTop: `1px solid ${theme.palette.background.default}`
   }
 }))
 
@@ -24,8 +23,8 @@ export const Footer: React.FC = () => {
   const media = useMedia()
 
   return (
-    <Container spacing={media.md ? 4 : 0} p={media.md ? 4 : 0}>
-      <Stack direction={media.md ? 'row' : 'column'} justifyContent={'space-evenly'}>
+    <Container spacing={media.md ? 0 : 4} p={media.md ? 0 : 4}>
+      <Stack direction={media.md ? 'column' : 'row'} justifyContent={'space-evenly'}>
         {sections.map(({title, navLinks}, index) => {
           return (
             <MenuContainer spacing={1} key={`${title}-${index}`}>
@@ -41,7 +40,7 @@ export const Footer: React.FC = () => {
           )
         })}
       </Stack>
-      {!media.md && <Divider />}
+      {media.md && <Divider />}
       {social.socials.length > 0 && (
         <Stack m={1} spacing={1}>
           <Stack direction={'row'} justifyContent={'center'}>

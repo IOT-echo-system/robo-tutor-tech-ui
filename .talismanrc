@@ -7,4 +7,6 @@ fileignoreconfig:
   checksum: 1579a0218b0ca211276da9f7ba8f898c79f43ab09e0b5123bea112297326c846
 - filename: src/components/organisms/Footer.tsx
   checksum: d8a7b0c8a113585baea41e7e2a9d9f42645e217aa486363d9afbb49dfbf6890c
+- filename: package-lock.json
+  checksum: 28bdea8b8d737f4ec1071a38150847ab01d0a9f09c1cdd5b2d857bf064d64578
 version: ""

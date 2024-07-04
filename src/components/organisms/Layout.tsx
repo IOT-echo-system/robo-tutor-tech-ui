@@ -19,7 +19,7 @@ export const Layout: React.FC<PropsWithChildren> = ({children}) => {
           <Header />
         </header>
         <main>
-          <Stack mt={media.md ? 8 : 6}>{children}</Stack>
+          <Stack mt={media.md ? 6 : 8}>{children}</Stack>
         </main>
       </Stack>
       <footer>

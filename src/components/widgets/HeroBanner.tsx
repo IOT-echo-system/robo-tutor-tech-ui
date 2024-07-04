@@ -14,10 +14,10 @@ const Container = styled(Stack)<{src: string}>(({theme, src}) => ({
   justifyContent: 'center',
   alignItems: 'center',
   '& h1': {
-    fontSize: theme.spacing(6),
+    fontSize: theme.spacing(8),
     fontWeight: 500,
-    [theme.breakpoints.up('md')]: {
-      fontSize: theme.spacing(8)
+    [theme.breakpoints.down('md')]: {
+      fontSize: theme.spacing(6)
     }
   }
 }))
@@ -36,12 +36,12 @@ export const HeroBanner: React.FC<WidgetPropType<HeroBannerPropsType>> = ({data}
   return (
     <Container src={apiConfig.assets + data.image.data?.attributes.formats.large.url}>
       <BoxedContainer>
-        <Stack spacing={2} width={media.md ? '60%' : '100%'}>
-          <Typography variant={media.md ? 'h1' : 'h3'} component={'h1'} color={data.darkText ? 'black' : 'white'}>
+        <Stack spacing={2} width={media.md ? '100%' : '60%'}>
+          <Typography variant={media.md ? 'h3' : 'h1'} component={'h1'} color={data.darkText ? 'black' : 'white'}>
             {data.title}
           </Typography>
           <Typography
-            variant={media.md ? 'h4' : 'subtitle1'}
+            variant={media.md ? 'subtitle1' : 'h4'}
             component={'h2'}
             color={data.darkText ? 'black' : 'white'}
           >
