@@ -35,7 +35,8 @@ export const getStaticProps: GetStaticProps<ContactUsPagePropsType> = async () =
     const initialValue = await CMSService.getInitialValue()
     return {props: {location, initialValue}, revalidate: 84600}
   } catch (error) {
-    return {notFound: true}
+    const location: LocationPropsType = {address1: '', address2: '', companyName: '', email: '', mapLink: '', phone: ''}
+    return {props: {location}, revalidate: 30}
   }
 }
 
